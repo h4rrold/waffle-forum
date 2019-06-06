@@ -4,7 +4,7 @@
 class App
 {
     use Singleton;
-    private $middleware= [];
+    private $middleware= ["Auth"];
 
     /**
      * @return array

@@ -6,7 +6,10 @@ class Route
     private $routes = [];
     private $params = [];
     private $cor_route;
-
+    public static function getCorrectRoute()
+    {
+        return Route::getInstance()->cor_route[0];
+    }
     public static function get($route, $controll)
     {
         self::getInstance()->routes[] = [$route, $controll];
@@ -38,8 +41,8 @@ class Route
 
 
         $arr_route = explode('/', $uri);
-        if($uri == ''){
-            return ['LandingController', 'out'];
+        if($uri == 'waffle-forum/admin'){
+            return ['Login', 'draw'];
         }
 
         foreach ($this->routes as $route) {
@@ -58,8 +61,9 @@ class Route
                 break;
             }
         }
-        if(empty($correct_route)){http_response_code(404);
-        header('Location:http://localhost/site/pages/404.html');
+        if(empty($correct_route)){
+        http_response_code(404);
+        header('Location:http://localhost/waffle-forum/admin/pages/404.html');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {
@@ -85,13 +89,14 @@ class Route
         }
         foreach ($middleware as $value){
             $obj = new $value();
-            if($obj->handle())break;
+            $obj->handle();
         }
     }
 
     public static function run()
     {
         $ctrl = self::getInstance()->parse();
+        require_once("App/Controllers/" . $ctrl[0] . ".php");
         $obj = new $ctrl[0]();
         self::getInstance()->getAllMiddleware($obj);
         if(empty(self::getInstance()->params)) call_user_func([$obj, $ctrl[1]]);

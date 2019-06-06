@@ -1,6 +1,9 @@
 <?php
 
-class Middleware
+abstract class Middleware
 {
-
+    function handle()
+    {
+        
+    }
 }
