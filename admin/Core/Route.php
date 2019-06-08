@@ -41,7 +41,7 @@ class Route
 
 
         $arr_route = explode('/', $uri);
-        if($uri == '/admin/'){
+        if($uri == '/'){
             return ['Login', 'draw'];
         }
 
