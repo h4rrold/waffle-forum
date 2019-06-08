@@ -41,7 +41,7 @@ class Route
 
 
         $arr_route = explode('/', $uri);
-        if($uri == 'waffle-forum/admin'){
+        if($uri == 'admin/'){
             return ['Login', 'draw'];
         }
 

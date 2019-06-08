@@ -20,8 +20,12 @@ class Users extends Model
 
     private function uploadAvatar($id)
     {
-        $target_dir = "..\\uploads\\";
-        $target_file = $target_dir . "user$id\\" . basename($_FILES["avatar"]["name"]);
+        $target_dir = "..\\uploads\\user$id\\";
+        $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
+        if(is_dir($target_dir))
+        {
+            mkdir($target_dir, 0700);
+        }
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
@@ -64,7 +68,7 @@ class Users extends Model
         if($isAvatar)
         {
             $sql .= "avatar = ?, ";
-            $params[] = "http://localhost/waffle-forum/uploads/user$id/$isAvatar";
+            $params[] = "https://forum-waffle.herokuapp.com/uploads/user$id/$isAvatar";
         }
         foreach($_POST as $key => $value)
         {
