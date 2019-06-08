@@ -20,8 +20,8 @@ class Users extends Model
 
     private function uploadAvatar($id)
     {
-        $target_dir = "..\\uploads\\user$id\\";
-        $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
+        $target_dir = "../uploads/user$id";
+        $target_file = $target_dir . DIRECTORY_SEPARATOR . basename($_FILES["avatar"]["name"]);
         if(is_dir($target_dir))
         {
             mkdir($target_dir, 0700);

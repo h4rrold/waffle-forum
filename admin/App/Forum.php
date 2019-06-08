@@ -4,7 +4,7 @@ class Forum extends Model
 {
     private function changeForumLogo()
     {
-        $target_dir = "..\\";
+        $target_dir = "../";
         $target_file = $target_dir . "logo.jpg";
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -42,7 +42,7 @@ class Forum extends Model
     }
     private function changeForumFavicon()
     {
-        $target_dir = "..\\";
+        $target_dir = "../";
         $target_file = $target_dir . "favicon.ico";
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
