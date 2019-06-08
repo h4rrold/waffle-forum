@@ -8,26 +8,23 @@ class Forum extends Model
         $target_file = $target_dir . "logo.jpg";
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
+
+        
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["sitelogo"]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = true;
             } else {
-                echo "File is not an image.";
-                return false;
+                return [false, "File is not an image."];
             }
         }
         
         if ($_FILES["sitelogo"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            return false;
+            return [false, "Sorry, your file is too large."];
         }
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            return false;
+            return [false, "Sorry, only JPG, JPEG, PNG & GIF files are allowed."];
         }
         if (file_exists($target_file)) {
             unlink($target_file);
@@ -35,10 +32,10 @@ class Forum extends Model
         if (move_uploaded_file($_FILES["sitelogo"]["tmp_name"], $target_file)) {
            // echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            return [false, "Sorry, there was an error uploading your file."];
         }
         //die();
-        return $_FILES["sitelogo"]["name"];
+        return [true, $_FILES["sitelogo"]["name"]];
     }
     private function changeForumFavicon()
     {
@@ -46,41 +43,37 @@ class Forum extends Model
         $target_file = $target_dir . "favicon.ico";
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["siteicon"]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                //echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = true;
             } else {
-                echo "File is not an image.";
-                return false;
+                return [false, "File is not an image."];
             }
         }
         
         if ($_FILES["siteicon"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            return false;
+            return [false, "Sorry, your file is too large."];
         }
         if($imageFileType != "ico") {
-            echo "Sorry, only ICO files are allowed.";
-            return false;
+            return [false, "Sorry, only ICO files are allowed."];
         }
         if (file_exists($target_file)) {
             unlink($target_file);
         }
         if (move_uploaded_file($_FILES["siteicon"]["tmp_name"], $target_file)) {
-           // echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            return [false, "Sorry, there was an error uploading your file."];
         }
-        return $_FILES["siteicon"]["name"];
+        return [true, $_FILES["siteicon"]["name"]];
     }
 
     public function updateForumSettings()
     {
-        if(isset($_FILES['sitelogo'])) $this->changeForumLogo();
-        if(isset($_FILES['siteicon'])) $this->changeForumFavicon();
-       // die("ebat");
+        $response = [];
+        if(isset($_FILES['sitelogo'])) $response[] = $this->changeForumLogo();
+        if(isset($_FILES['siteicon'])) $response[] = $this->changeForumFavicon();
+        return $response;
     }
 }

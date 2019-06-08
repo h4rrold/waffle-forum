@@ -21,7 +21,16 @@ class Groups extends Model
 
     public function updateGroupById()
     {
-        if($_POST['id'] != '0')
+        $response = [];
+        $id = $_POST['id'] ?? null;
+        $groupname = $_POST['groupname'] ?? null;
+        if($groupname == null || $id == null)
+        {
+            $response[] = [false, "Bad request."];
+            return $response;
+        }
+
+        if($id != '0')
         {
             $sql = "UPDATE groups SET ";
             $params = [];
@@ -38,11 +47,18 @@ class Groups extends Model
             $sql .= " WHERE groups.id = ?;";
             //echo($sql);
             MyPDO::runWithoutFetch($sql, $params);
+            $response[] = [true, "Updated group with id = $id"];
         }
-        else {
+        else if($id == '0'){
             //INSERT INTO groups (id, name, style) VALUES (NULL, ?, ?, ?);
             $sql = "INSERT INTO groups (id, name, style) VALUES (NULL, ?, ?);";
-            MyPDO::runWithoutFetch($sql, [$_POST['groupname'], $_POST['groupstyle']]);
+            MyPDO::runWithoutFetch($sql, [$groupname, $_POST['groupstyle']]);
+            $response[] = [true, "Added new group with name = $groupname"];
         }
+        else 
+        {
+            $response[] = [false, "Please provide id of directory to be changed."];
+        }
+        return $response;
     }
 }
