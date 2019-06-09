@@ -111,9 +111,9 @@
 </div>
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
-        <button class="community-menu__button-down_drop"><i class="fas fa-chevron-down"></i><span
+        <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
                     class="button_drop__text">Forum menu</span></button>
-        <button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>
+        <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
             <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/home" class="community-menu__link_drop">Домашня</a></li>

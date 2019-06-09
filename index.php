@@ -10,7 +10,7 @@ require_once 'Core/Controller.php';
 require_once 'Core/Model.php';
 require_once 'Core/SQLBuilder.php';
 require_once 'Core/App.php';
-MyPDO::connect('mysql:host=localhost;dbname=waffle_forum;charset=utf8', 'root', 'admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
+MyPDO::connect('mysql:host=localhost;dbname=waffle_forum;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
 echo output('header');
 Route::run();
 echo output('footer');

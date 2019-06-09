@@ -472,18 +472,12 @@ button::-moz-focus-inner {
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.community-menu__button-down_drop {
+.community-menu__button-drop {
     display: none;
 }
 
 .button_drop__text {
     margin-left: 10px;
-}
-
-.community-menu__button-up_drop {
-    color: #ffffff;
-    font-size: 1.5rem;
-    display: none;
 }
 
 .community-menu-block_drop {
@@ -503,7 +497,9 @@ button::-moz-focus-inner {
     border-bottom: 1px solid #707070;
     padding-bottom: 15px;
 }
-
+.community-menu__item_drop:last-child{
+    margin-bottom: 0;
+}
 .community-menu__link_drop {
     font-weight: bolder;
     font-size: 1.38rem;
@@ -1491,9 +1487,12 @@ margin-top: 60px;
         cursor: pointer;
     }
     .sign-in-proposition-button{
-font-size: 1.0rem;
-padding: 16px 18px;
-}
+
+font-size: 1.0rem;
+
+padding: 16px 18px;
+
+}
 }
 
 @media screen and (max-width: 550px) {
@@ -1503,16 +1502,8 @@ margin-top: 60px;
         font-size: 13px;
     }
 
-    .community-menu__button-down_drop {
+    .community-menu__button-drop {
         display: inline;
-        color: #ffffff;
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: 25px 0;
-    }
-
-    .community-menu__button-up_drop {
-        display: none;
         color: #ffffff;
         font-size: 1.5rem;
         font-weight: bold;
