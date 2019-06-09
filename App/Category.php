@@ -4,7 +4,7 @@ class Category extends Model
 {
     public function getFetchCategories()
     {
-        $categories = MyPDO::run("select directories.id, directories.name, topics.title, max(posts.datetime) as MaxDate, users.nickname, directories.amount_of_topics, directories.amount_of_posts from directories, users, topics, posts WHERE users.id = posts.user_id AND topics.id = posts.topic_id AND directories.id = topics.directory_id group by topics.id ORDER BY directories.id");
+        $categories = MyPDO::run("select directories.id, directories.name, topics.title, max(posts.datetime) as MaxDate, users.nickname, directories.amount_of_topics, directories.amount_of_posts from directories, users, topics, posts WHERE users.id = posts.user_id AND topics.post_id = posts.id AND topics.id = posts.topic_id AND directories.id = topics.directory_id group by directories.id ORDER BY directories.id");
         $monthes = [
             1 => 'Січня', 2 => 'Лютого', 3 => 'Березня', 4 => 'Квітня',
             5 => 'Травня', 6 => 'Червня', 7 => 'Липня', 8 => 'Серпня',

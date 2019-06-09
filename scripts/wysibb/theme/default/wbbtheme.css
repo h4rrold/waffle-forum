@@ -515,6 +515,7 @@ html{height:100% !important;}
   line-height: 28px;
   max-height:100px;
   overflow:auto;
+  height: 34px;
   font-size:14px;
 }
 #wbbmodal  .wbbm-bottom{
@@ -767,7 +768,4 @@ html{height:100% !important;}
 	
 	.ve-tlb-colorpick{width:24px;height:24px;line-height:24px;text-align:right;}
 	.wysibb .bottom-resize-line{display:block;height:5px;cursor:ns-resize;}
-}
-.bottom-resize-line{
-  outline: none !important;
 }
