@@ -20,18 +20,22 @@ class Users extends Model
 
     private function uploadAvatar($id)
     {
-        $target_dir = "..\\uploads\\";
-        $target_file = $target_dir . "user$id\\" . basename($_FILES["avatar"]["name"]);
+        $target_dir = "../uploads/user$id";
+        $target_file = $target_dir . DIRECTORY_SEPARATOR . basename($_FILES["avatar"]["name"]);
+        if(!is_dir($target_dir))
+        {
+            mkdir($target_dir, 0700);
+        }
         $uploadOk = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["avatar"]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                //echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = true;
             } else {
-                echo "File is not an image.";
+                //echo "File is not an image.";
                 return false;
             }
         }
@@ -39,32 +43,43 @@ class Users extends Model
             return $_FILES["avatar"]["name"];
         }
         if ($_FILES["avatar"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
+            //echo "Sorry, your file is too large.";
             return false;
         }
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             return false;
         }
         if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-           // echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
+            //echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            //echo "Sorry, there was an error uploading your file.";
         }
         return $_FILES["avatar"]["name"];
     }
     public function updateUserById()
     {  
+        $response = [];
         $isAvatar = false;
-        $id = $_POST['id'];
-        if(isset($_FILES["avatar"])) $isAvatar = $this->uploadAvatar($id);
+        $id = $_POST['id'] ?? null;
+        if($id == null)
+        {
+            $response[] = [false, $_GET];
+            return $response;
+        }
+        if(isset($_FILES["avatar"]) && $_FILES['avatar']['name'] != '') $isAvatar = $this->uploadAvatar($id);
         $sql = "UPDATE users SET ";
         $params = [];
         if($isAvatar)
         {
+            $response[] = [true, "Avatar changed successfully."];
             $sql .= "avatar = ?, ";
-            $params[] = "http://localhost/waffle-forum/uploads/user$id/$isAvatar";
+            $params[] = "https://forum-waffle.herokuapp.com/uploads/user$id/$isAvatar";
+            
+        }
+        else if(isset($_FILES["avatar"]) && $_FILES['avatar']['name'] != ''){
+            $response[] = [false, "Bad avatar"];
         }
         foreach($_POST as $key => $value)
         {
@@ -80,6 +95,8 @@ class Users extends Model
         $sql .= " WHERE users.id = ?;";
         //echo($sql);
         MyPDO::runWithoutFetch($sql, $params);
+        $response[] = [true, "Updated user with id = $id"];
+        return $response;
     }
 
     /*

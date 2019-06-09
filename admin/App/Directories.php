@@ -20,16 +20,31 @@ class Directories extends Model
 
     public function updateDirectoryById()
     {
-        if($_POST['id'] != '0')
+        $response = [];
+        $id = $_POST['id'] ?? null;
+        $parent_id = $_POST['parent_id'];
+        $name = $_POST['directoryname'];
+        if($parent_id == $id && $id != '0')
+        {
+            $response[] = [false, "Directory parent_id cannot be like its own id."];
+            return $response;
+        }
+        if($id != '0')
         {
             $sql = "UPDATE directories SET name = ?, parent_id = ? WHERE directories.id = ?;";
             
-            MyPDO::runWithoutFetch($sql, [$_POST['directoryname'], $_POST['parent_id'], $_POST['id']]);
+            MyPDO::runWithoutFetch($sql, [$_POST['directoryname'], $parent_id, $id]);
+            $response[] = [true, "Updated directory with id = $id"];
         }
-        else {
+        else if($id == '0') {
             //INSERT INTO groups (id, name, style) VALUES (NULL, ?, ?, ?);
             $sql = "INSERT INTO directories (id, name, parent_id) VALUES (NULL, ?, ?);";
-            MyPDO::runWithoutFetch($sql, [$_POST['directoryname'], $_POST['parent_id']]);
+            MyPDO::runWithoutFetch($sql, [$name, $parent_id]);
+            $response[] = [true, "Added directory '$name'"];
         }
+        else {
+            $response = [false, "Please provide id of directory to be changed."];
+        }
+        return $response;
     }
 }

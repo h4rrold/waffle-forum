@@ -22,33 +22,26 @@ class AdminPanel extends Controller
     public function saveForumSettings()
     {
         $forum = new Forum();
-        $forum->updateForumSettings();
-       // $this->draw();
-        header("location: settings4");
+        echo(json_encode($forum->updateForumSettings()));
     }
 
     public function saveUsers()
     {
         $users = new Users();
-        $users->updateUserById();
-       // $this->draw();
-        header("location: settings1");
+        echo(json_encode($users->updateUserById()));
     }
+//responses from api
 
     public function saveGroups()
     {   
         $groups = new Groups();
-        $groups->updateGroupById();
-        //$this->draw();
-        header("location: settings2");
+        echo(json_encode($groups->updateGroupById()));
     }
 
     public function saveDirectories()
     {
         $directories = new Directories();
-        $directories->updateDirectoryById();
-        //$this->draw();
-        header("location: settings3");
+        echo(json_encode($directories->updateDirectoryById()));
     }
 
     //users

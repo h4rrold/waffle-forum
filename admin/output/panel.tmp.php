@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Light admin panel</title>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
         html{ 
             background: #508991;
@@ -68,7 +70,25 @@
         </div>
     </div>
     <div class="container-fluid mainmenu">
-        
+        <div class="modal fade" id="adminModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">waffle-forum</h4>
+                </div>
+                <div class="modal-body">
+                <p id='ajaxResponse'></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
         <div class="col-md-2">
             <div class="col-md-12 menu" target="settings1">
                 <i class="fas fa-user"></i> Users
@@ -162,12 +182,12 @@
                   <input type="file" id="favicon" accept="image/jpeg,image/png" name="siteicon">
                   <br>
                   
-                  <img src="http://localhost/waffle-forum/favicon.ico" height='80'/>
+                  <img src="http://localhost/favicon.ico" height='80'/>
                   <br>
                   Logo
                   <input type="file" id="logo" name="sitelogo">
                   <br>
-                  <img src="http://localhost/waffle-forum/logo.jpg" height="80" />
+                  <img src="http://localhost/logo.jpg" height="80" />
                   <br>
                   <input type="submit" value="Send">
                 </form>
