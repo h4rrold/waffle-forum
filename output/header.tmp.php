@@ -49,7 +49,7 @@
                 <div class="nav__menu_drop">
                     <div class="menu_drop__logo_drop"><img src="/img/logo-fnl-white.png" alt="" class="logo_drop"></div>
                     <ul class="menu_drop">
-                        <li class="menu__item_drop"><a href="http://localhost/waffle-forum/main" class="menu__link_drop">Головна</a></li>
+                        <li class="menu__item_drop"><a href="http://localhost/waffle-forum" class="menu__link_drop">Головна</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Про нас</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Блог</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Завантаження</a></li>
@@ -111,9 +111,9 @@
 </div>
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
-        <button class="community-menu__button-down_drop"><i class="fas fa-chevron-down"></i><span
+        <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
                     class="button_drop__text">Forum menu</span></button>
-        <button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>
+        <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
             <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/home" class="community-menu__link_drop">Домашня</a></li>

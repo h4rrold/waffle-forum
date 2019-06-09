@@ -8,7 +8,7 @@
             <div class="page__popular">
                 <div class="popular"><?php
                     foreach ($topics as $topic) {
-                        echo output('topic', ['user_avatar' => $topic['avatar'], 'title_topic' => $topic['title'], 'user_name' => $topic['nickname'], 'topic_date' => $topic['datetime'], 'post_amount' => $topic['amount_of_posts'], 'views_amount' => $topic['amount_of_views'], 'topic_text' => $topic['text']]);
+                        echo output('topic', ['directory_id' => $topic['directory_id'], 'directory_name' => $topic['name'], 'topic_id' => $topic['id'], 'user_avatar' => $topic['avatar'], 'title_topic' => $topic['title'], 'user_name' => $topic['nickname'], 'topic_date' => $topic['datetime'], 'post_amount' => $topic['amount_of_posts'], 'views_amount' => $topic['amount_of_views'], 'topic_text' => $topic['text']]);
                     } ?></div>
             </div>
             <div class="page__topic-amount-display">

@@ -7,7 +7,7 @@
                 </div>
                 <div class="topic__topic-content">
                     <div class="topic-content__title-topic">
-                        <a href="#" class="title-topic"><?=$title_topic?></a>
+                        <a href="http://localhost/waffle-forum/community/categories/<?=$directory_id?>/<?=$directory_name?>/<?=$topic_id?>/<?=$title_topic?>" class="title-topic"><?=$title_topic?></a>
                     </div>
 
                     <div class="topic-content__info-stat">
