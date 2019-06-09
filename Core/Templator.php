@@ -22,6 +22,7 @@ function output($template, $params = [])
         die();
     }
     extract($params);
+    $title = 'Waffle-Forum';
     ob_start();
     require "$file_r_cache";
     return ob_get_clean();

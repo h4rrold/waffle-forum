@@ -10,9 +10,7 @@
     <link href="/waffle-forum/fonts/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
     <script src="/waffle-forum/scripts/jquery-3.4.1.js" defer></script>
     <script src="/waffle-forum/scripts/main.js" defer></script>
-    <title>Популярні теми</title>
 </head>
-
 <body class="body">
 <header class="header">
     <div class="header__content">
@@ -51,11 +49,11 @@
                 <div class="nav__menu_drop">
                     <div class="menu_drop__logo_drop"><img src="/img/logo-fnl-white.png" alt="" class="logo_drop"></div>
                     <ul class="menu_drop">
-                        <li class="menu__item_drop"><a href="#" class="menu__link_drop">Головна</a></li>
+                        <li class="menu__item_drop"><a href="http://localhost/waffle-forum/main" class="menu__link_drop">Головна</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Про нас</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Блог</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Завантаження</a></li>
-                        <li class="menu__item_drop "><a href="#" class="menu__link_drop menu__link_active_drop">Спільнота</a></li>
+                        <li class="menu__item_drop "><a href="http://localhost/waffle-forum/community/home" class="menu__link_drop menu__link_active_drop">Спільнота</a></li>
                     </ul>
                 </div>
             </nav>
@@ -63,11 +61,11 @@
         </div>
         <div class="header__nav">
             <ul class="nav__menu">
-                <li class="menu__item"><a href="#" class="menu__link">Головна</a></li>
+                <li class="menu__item"><a href="http://localhost/waffle-forum/main" class="menu__link">Головна</a></li>
                 <li class="menu__item"><a href="#" class="menu__link">Про нас</a></li>
                 <li class="menu__item"><a href="#" class="menu__link">Блог</a></li>
                 <li class="menu__item"><a href="#" class="menu__link">Завантаження</a></li>
-                <li class="menu__item menu__item_active"><a href="#" class="menu__link">Спільнота</a></li>
+                <li class="menu__item menu__item_active"><a href="http://localhost/waffle-forum/community/home" class="menu__link">Спільнота</a></li>
             </ul>
             <div class="nav__sign-in-button">
                 <div class="sign-in-button">
@@ -118,16 +116,16 @@
         <button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>
         </button>
         <nav class=" community-menu_drop">
-            <li class="community-menu__item_drop"><a href="#" class="community-menu__link_drop">Домашня</a></li>
-            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/categories" class="community-menu__link_drop">Категорії</a></li>
-            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/popular-topics/1" class="community-menu__link_drop community-menu__link_drop_active">Популярні</a></li>
-            <li class="community-menu__item_drop"><a href="#" class="community-menu__link_drop">Недавні</a></li>
+            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/home" class="community-menu__link_drop">Домашня</a></li>
+            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/categories" class="community-menu__link_drop">Категорії</a></li>
+            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/popular-topics/1" class="community-menu__link_drop community-menu__link_drop_active">Популярні</a></li>
+            <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/recent" class="community-menu__link_drop">Недавні</a></li>
         </nav>
     </div>
     <nav class="community-menu">
-        <li class="community-menu__item"><a href="#" class="community-menu__link">Домашня</a></li>
-        <li class="community-menu__item"><a href="http://localhost/waffle-forum/categories" class="community-menu__link">Категорії</a></li>
-        <li class="community-menu__item"><a href="http://localhost/waffle-forum/popular-topics/1" class="community-menu__link community-menu__link_active">Популярні</a></li>
-        <li class="community-menu__item"><a href="#" class="community-menu__link">Недавні</a></li>
+        <li class="community-menu__item"><a href="http://localhost/waffle-forum/community/home" class="community-menu__link">Домашня</a></li>
+        <li class="community-menu__item"><a href="http://localhost/waffle-forum/community/categories" class="community-menu__link">Категорії</a></li>
+        <li class="community-menu__item"><a href="http://localhost/waffle-forum/community/popular-topics/1" class="community-menu__link community-menu__link_active">Популярні</a></li>
+        <li class="community-menu__item"><a href="http://localhost/waffle-forum/community/recent" class="community-menu__link">Недавні</a></li>
     </nav>
 </div>

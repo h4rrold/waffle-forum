@@ -1,4 +1,4 @@
-
+<title>{{$title}}.Популярні теми</title>
 <div class="content">
     <div class="content__page">
         <div class="page">

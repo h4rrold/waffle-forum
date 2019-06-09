@@ -1,3 +1,4 @@
+<title>{{$title}}.Розділи</title>
 <div class="content">
         <div class="content__page">
             <div class="page">
