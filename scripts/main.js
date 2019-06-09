@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
-    $( ".cross" ).hide();
-    $( ".menu" ).hide();
+    
     $( ".button__burger" ).click(function() {
    
     $( ".nav__menu_drop").slideToggle( "slow", function() {
