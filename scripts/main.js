@@ -39,9 +39,11 @@ $(document).ready(function () {
 
 
     $(".rate-post__button").click(function () {
-        $(".rate-post_result").slideToggle(200);
-        $(".rate-post").hide();
-        $('.rate-post_result').css('display', 'flex');
+        let container = $(this).closest('.post-content__rate-post');
+
+        $(container).children(".rate-post_result").slideToggle(200);
+        $(container).children('.rate-post').hide();
+        $(container).children('.rate-post_result').css('display', 'flex');
     });
 
     $('.last-post-topic__text').each(function () {
