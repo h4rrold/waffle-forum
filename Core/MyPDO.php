@@ -25,6 +25,15 @@ class MyPDO
         //$data['rowCount'] = $sth->rowCount();
         return $data;
     }
+    public static function first($sql, $args = [])
+    {
+
+        $sth = self::getInstance()->prepare($sql);
+        $sth->execute($args);
+        $data = $sth->fetch();
+        //$data['rowCount'] = $sth->rowCount();
+        return $data;
+    }
     public static function runWithoutFetch($sql, $args = [])
     {
         
