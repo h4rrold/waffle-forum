@@ -37,4 +37,13 @@ $( document ).ready(function() {
             
           });
     });
+
+    $(".rate-post__button").click(function () { 
+        $(".community-menu_drop").slideToggle(400, function () {
+            $(".rate-post").hide();
+            $('.rate-post_result').css('display', 'flex');
+          });
+        
+    });
+    
     });
