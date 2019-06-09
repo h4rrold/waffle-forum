@@ -56,6 +56,10 @@ button::-moz-focus-inner {
     padding: 0;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 .clearfix {
     display: table;
     clear: both;

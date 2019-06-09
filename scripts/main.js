@@ -38,11 +38,18 @@ $(document).ready(function () {
 
 
     $(".rate-post__button").click(function () {
-        $(".community-menu_drop").slideToggle(400, function () {
-            $(".rate-post").hide();
-            $('.rate-post_result').css('display', 'flex');
-        });
-
+        $(".rate-post_result").slideToggle(200);
+        $(".rate-post").hide();
+        $('.rate-post_result').css('display', 'flex');
     });
 
+    $('.last-post-topic__text').each(function() {
+        /*let lastPost = $(this).html('');
+        lastPost = lastPost.substring(0, 30) + '...';
+        $(this).html(lastPost);*/
+        $(this).text(function() {
+            let tLength = $(this).text().length;
+            return $(this).text().substring(0,75) + (tLength>75?'...':'');
+        });
+    });
 });
