@@ -8,17 +8,17 @@
                 <div class="info-stat-category">
                     <div class="info-stat__last-post-topic">
                         <div class="last-post-topic">Останнє в:
-                            <span class="last-post-topic__text"><?=$topic_last_title?></span>
+                            <!--Підставити ссилку в href--><a href="#" class="last-post-topic__text"><?=$topic_last_title?></a>
                         </div>
                     </div>
                     <div class="info-stat-category__post-info">
                         <div class="post-info__last-post-topic-author">
-                            <div class="last-post-topic-author">від<span class="last-post-topic-author__text"> <a href="#" class="topic-author"><?=$nickname?></a></span>
+                            <div class="last-post-topic-author nowrap">від<span class="last-post-topic-author__text"> <a href="#" class="topic-author"><?=$nickname?></a></span>
                                 <span class="stat__delimeter">|</span>
                             </div>
                         </div>
 
-                        <div class="post-info__last-post-topic-date">
+                        <div class="post-info__last-post-topic-date nowrap">
                             <span class="last-post-topic-date"><?=$last_post_date?></span>
                         </div>
                     </div>

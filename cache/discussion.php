@@ -94,6 +94,7 @@
                 <div class="page__sign-in-proposition-button">
                     <button class="sign-in-proposition-button">Увійти, щоб залишити коментар</button>
                 </div>
+                <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
             </div>              
         </div>
     </div>

@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/waffle-forum/styles/fonts.css">
-    <link rel="stylesheet" href="/waffle-forum/styles/main.css">
-    <link href="/waffle-forum/fonts/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
-    <script src="/waffle-forum/scripts/jquery-3.4.1.js" defer></script>
-    <script src="/waffle-forum/scripts/main.js" defer></script>
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="scripts/wysibb/theme/default/wbbtheme.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="fonts/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+    
+    <script src="scripts/jquery-3.4.1.js" defer></script>
+    <script src="scripts/wysibb/jquery.wysibb.min.js" defer></script>
+    
+     <script src="scripts/main.js" defer></script>
+    <title>Discussion</title>
 </head>
+
 <body class="body">
 <header class="header">
     <div class="header__content">
@@ -111,9 +117,9 @@
 </div>
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
-        <button class="community-menu__button-down_drop"><i class="fas fa-chevron-down"></i><span
+        <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
                     class="button_drop__text">Forum menu</span></button>
-        <button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>
+        <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
             <li class="community-menu__item_drop"><a href="http://localhost/waffle-forum/community/home" class="community-menu__link_drop">Домашня</a></li>
