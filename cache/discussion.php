@@ -102,7 +102,22 @@
                         </div>                                 
                     </div>              
                 </div>
-                
+                <div class="page__post-page-nav">
+                    <div class="post-page-nav">
+                        <a href=#" class="post-page-nav__item">
+                            <i class="fas fa-angle-double-left"></i>
+                        </a>
+                        <a href=#" class="post-page-nav__item">
+                                <i class="fas fa-angle-left"></i>
+                        </a>
+                        <a href=#" class="post-page-nav__item">
+                            <i class="fas fa-angle-right"></i>
+                        </a>
+                        <a href=#" class="post-page-nav__item">
+                            <i class="fas fa-angle-double-right"></i>
+                        </a>
+                    </div>
+                </div>
                 
                 
                 

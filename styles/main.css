@@ -23,7 +23,9 @@ a:hover {
     color: #ffff;
     text-decoration: none;
 }
-
+a:hover{
+    color: #2D2929;
+}
 li {
     list-style: none;
 }
@@ -1261,6 +1263,34 @@ button::-moz-focus-inner {
     white-space: nowrap;
 
 }
+.page__post-page-nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.post-page-nav{
+    
+    
+}
+.post-page-nav__item{
+    color: #2D2929;
+    margin-right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.post-page-nav__item::hover{
+    color: #2D2929;
+}
+.post-page-nav__item:last-child{
+    margin-right: 0px;
+}
+.post-page-nav__item i:hover{
+    color: #2D2929;
+    text-decoration: underline;
+}
+
+
+
 /****************************************************
 *****************************************************
 *********************MEDIA QUERIES******************
@@ -1573,6 +1603,9 @@ button::-moz-focus-inner {
         padding: 16px 18px;
 
     }
+    .post-page-nav__item{
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -1705,6 +1738,7 @@ button::-moz-focus-inner {
     .page__editor{
         max-width: 460px;
     }
+
 }
 
 @media screen and (max-width: 430px) {
