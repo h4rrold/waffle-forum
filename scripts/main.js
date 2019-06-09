@@ -1,5 +1,6 @@
-$(document).ready(function () {
 
+$(document).ready(function () {
+    
     $(".button__burger").click(function () {
         $('.button__cross').css('pointer-events', 'none');
         $(".nav__menu_drop").slideToggle("slow", function () {
@@ -50,4 +51,13 @@ $(document).ready(function () {
             return $(this).text().substring(0, 75) + (tLength > 75 ? '...' : '');
         });
     });
+    /*WusiBb init */
+    
+    var wbbOpt = {
+        buttons: "bold,italic,underline,|,img,link,|,code,quote"
+        }
+    $(function() {
+        $("#editor").wysibb(wbbOpt);
+      })
+      
 });

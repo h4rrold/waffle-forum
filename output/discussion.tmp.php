@@ -45,6 +45,17 @@
                                 </div>
                             </div>
                         </div>
+                        
+                <div class="page__editor">
+                    <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                </div>
+                <div class="page__sign-in-proposition-button">
+                    <form action="" type="post">
+                    <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
+                    </form>
+                    
+                </div>
+                
                         <div class="discussion__post">
                             <div class="post">
                                 <div class="post__user-avatar">
@@ -91,10 +102,10 @@
                         </div>                                 
                     </div>              
                 </div>
-                <div class="page__sign-in-proposition-button">
-                    <button class="sign-in-proposition-button">Увійти, щоб залишити коментар</button>
-                </div>
-                <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                
+                
+                
+                
             </div>              
         </div>
     </div>

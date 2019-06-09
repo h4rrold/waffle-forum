@@ -5,18 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="scripts/wysibb/theme/default/wbbtheme.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="fonts/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
-    
-    <script src="scripts/jquery-3.4.1.js" defer></script>
-    <script src="scripts/wysibb/jquery.wysibb.min.js" defer></script>
-    
-     <script src="scripts/main.js" defer></script>
-    <title>Discussion</title>
+    <link rel="stylesheet" href="/waffle-forum/styles/formReset.css">
+    <link rel="stylesheet" href="/waffle-forum/scripts/wysibb/theme/default/wbbtheme.css">
+    <link rel="stylesheet" href="/waffle-forum/styles/fonts.css">
+    <link rel="stylesheet" href="/waffle-forum/styles/main.css">
+    <link href="/waffle-forum/fonts/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+    <script src="/waffle-forum/scripts/jquery-3.4.1.js"></script>
+    <script src="/waffle-forum/scripts/wysibb/jquery.wysibb.js"></script>
+    <script src="/waffle-forum/scripts/main.js"></script>
 </head>
-
 <body class="body">
 <header class="header">
     <div class="header__content">
