@@ -36,7 +36,6 @@ class Route
         $correct_route = [];
         $uri = $_GET['route'] ?? substr($_SERVER['REQUEST_URI'],6);
 
-
         $arr_route = explode('/', $uri);
         if($uri == ''){
             return ['LandingController', 'out'];
@@ -59,7 +58,7 @@ class Route
             }
         }
         if(empty($correct_route)){http_response_code(404);
-        header('Location:http://localhost/site/pages/404.html');
+        header('Location:http://localhost/waffle-forum/pages/404.html');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {
@@ -92,6 +91,7 @@ class Route
     public static function run()
     {
         $ctrl = self::getInstance()->parse();
+        require_once("App/Controllers/" . $ctrl[0] . ".php");
         $obj = new $ctrl[0]();
         self::getInstance()->getAllMiddleware($obj);
         if(empty(self::getInstance()->params)) call_user_func([$obj, $ctrl[1]]);

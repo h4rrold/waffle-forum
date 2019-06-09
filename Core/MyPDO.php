@@ -18,15 +18,20 @@ class MyPDO
 
     public static function run($sql, $args = [])
     {
-        if (empty($args)) {
-            return self::getInstance()->query($sql);
-        } else {
-            $sth = self::getInstance()->prepare($sql);
-            $sth->execute($args);
-            $data = $sth->fetchAll();
-            //$data['rowCount'] = $sth->rowCount();
-            return $data;
-        }
+        
+        $sth = self::getInstance()->prepare($sql);
+        $sth->execute($args);
+        $data = $sth->fetchAll();
+        //$data['rowCount'] = $sth->rowCount();
+        return $data;
+    }
+    public static function runWithoutFetch($sql, $args = [])
+    {
+        
+        $sth = self::getInstance()->prepare($sql);
+        $sth->execute($args);
+        //$data['rowCount'] = $sth->rowCount();
+        return $sth;
     }
     public static function insert($sql, $args = [])
     {

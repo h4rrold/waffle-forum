@@ -23,4 +23,3 @@ private $middleware= [];
     }
 
 }
-require_once 'Middleware/Auth.php';

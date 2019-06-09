@@ -1,0 +1,38 @@
+html{
+    box-sizing: border-box;
+}
+*,*::after{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+.clearfix::after,.clearfix::before{
+    display: table;
+    clear: both;
+    content: '';
+}
+.wrapper{
+    max-width: 1640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-item{
+    display: flex;
+    justify-content: center;
+    width: calc((100% - 11*16px) / 12);
+    float: left;
+    margin-right: 16px;
+    
+    height: 300px;
+    background: #000;
+
+}
+.grid-item:nth-child(12n+12){
+    float: right;
+    margin-right: 0;
+}
+.grid-item:first-child{
+    margin-left: 0;
+}
+
+@media

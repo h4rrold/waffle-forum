@@ -3,8 +3,8 @@ $file_r_output = '';
 $file_r_cache = '';
 function output($template, $params = [])
 {
-    $file_r_cache =  "Cache/$template.php";
-    $file_r_output = "Output/$template.tmp.php";
+    $file_r_cache =  "cache/$template.php";
+    $file_r_output = "output/$template.tmp.php";
     try {
         if (!file_exists($file_r_cache)) {
             if (!file_exists($file_r_output)) {
@@ -23,7 +23,7 @@ function output($template, $params = [])
     }
     extract($params);
     ob_start();
-    require_once "$file_r_cache";
+    require "$file_r_cache";
     return ob_get_clean();
 
 }
@@ -35,8 +35,8 @@ class Templator{
     public static function run($file)
     {
         $me = new self();
-        $me->file_tmp = "Output/$file.tmp.php";
-        $me->file_cache = "Cache/$file.php";
+        $me->file_tmp = "output/$file.tmp.php";
+        $me->file_cache = "cache/$file.php";
         $me->file_code = file_get_contents($me->file_tmp);
         $me->parse();
         return $me->file_code;
