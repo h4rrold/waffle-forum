@@ -602,7 +602,11 @@ button::-moz-focus-inner {
 .user-avatar {
     display: inline-block;
 }
-
+.user-avatar img{
+    width: 120px;
+    height: 120px;
+    vertical-align: middle;
+}
 .title-topic {
     font-weight: bold;
     color: #2D2929;
@@ -1110,7 +1114,8 @@ font-size: 1.4rem;
 }
 
 .post__user-avatar {
-vertical-align: top;
+
+vertical-align: top;
 }
 .post__post-content{
     width: 77%;
@@ -1466,6 +1471,29 @@ margin-top: 60px;
     .discussion__post{
         max-width: 608px;
     }
+    .rate-post__text{
+        font-size: 1.2rem;
+    }
+    .rate-post__text_result{
+        font-size: 1.2rem;
+    }
+    .rate-post__stat-post_result{
+        
+    }
+    .rate-post__button{
+        color: #17828E;
+        border: 1px solid #17828E;
+        font-size: 1rem;
+        padding: 6px 18px;
+        border-radius: 25px;
+        margin-right: 15px;
+        min-width: 61px;
+        cursor: pointer;
+    }
+    .sign-in-proposition-button{
+font-size: 1.0rem;
+padding: 16px 18px;
+}
 }
 
 @media screen and (max-width: 550px) {
@@ -1587,7 +1615,17 @@ margin-top: 60px;
     .rate-post_result{
         font-size: 1.2rem;
     }
-    
+    .rate-post__text{
+        margin-bottom: 10px;
+        display: block;
+    }
+    .rate-post__button{
+
+    }
+    .rate-post{
+        display: block;
+        
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -1804,7 +1842,15 @@ margin-top: 60px;
     .post-content__rate-post{
         margin-top: 30px;
     }
+    .rate-post__text{
+        font-size: 1rem;
+    }
+    .rate-post__text_result{
+        font-size: 1.0rem;
+    }
+
     .rate-post_result{
         font-size: 1.0rem;
+        align-items: center;
     }
 }
