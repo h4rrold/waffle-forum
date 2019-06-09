@@ -15,10 +15,5 @@ require_once 'Core/Controller.php';
 require_once 'Core/Model.php';
 require_once 'Core/SQLBuilder.php';
 require_once 'Core/App.php';
-//<<<<<<< HEAD
-//MyPDO::connect('mysql:host=localhost;dbname=waffle_forum;charset=utf8', 'root', 'admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
-//=======
-//>>>>>>> 3e275fe142e1dd8f70c01b4d8e6fe19d633a0d7c
-//$title = 'Admin Panel';
-//Route::run();
-//return ob_get_contents();
+$title = 'Admin Panel';
+Route::run();
