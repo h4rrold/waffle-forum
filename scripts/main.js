@@ -1,24 +1,3 @@
-HEAD
-$( document ).ready(function() {
-
-    
-    $( ".button__burger" ).click(function() {
-   
-    $( ".nav__menu_drop").slideToggle( "slow", function() {
-        $( ".block-users-buttons" ).show(); 
-    $( ".button__burger" ).hide();
-    $( ".button__cross" ).show();
-   
-    
-    });
-    });
-    
-    $( ".button__cross" ).click(function() {
-    $( ".nav__menu_drop" ).slideToggle( "slow", function() {
-        $( ".block-users-buttons" ).hide(); 
-    $( ".button__cross" ).hide();
-    $( ".button__burger" ).show();
-    });
 $(document).ready(function () {
 
     $(".button__burger").click(function () {
@@ -45,14 +24,14 @@ $(document).ready(function () {
 
     $(".community-menu__button-drop").click(function () {
         $(this).css('pointer-events', 'none');
-        if($(this).children('i').hasClass('fa-chevron-up')){
+        if ($(this).children('i').hasClass('fa-chevron-up')) {
             $(this).children('i').removeClass('fa-chevron-up');
             $(this).children('i').addClass('fa-chevron-down');
-        } else if($(this).children('i').hasClass('fa-chevron-down')){
+        } else if ($(this).children('i').hasClass('fa-chevron-down')) {
             $(this).children('i').removeClass('fa-chevron-down');
             $(this).children('i').addClass('fa-chevron-up');
         }
-        $(".community-menu_drop").slideToggle("slow", function() {
+        $(".community-menu_drop").slideToggle("slow", function () {
             $('.community-menu__button-drop').css('pointer-events', 'auto');
         });
 
@@ -65,13 +44,10 @@ $(document).ready(function () {
         $('.rate-post_result').css('display', 'flex');
     });
 
-    $('.last-post-topic__text').each(function() {
-        /*let lastPost = $(this).html('');
-        lastPost = lastPost.substring(0, 30) + '...';
-        $(this).html(lastPost);*/
-        $(this).text(function() {
+    $('.last-post-topic__text').each(function () {
+        $(this).text(function () {
             let tLength = $(this).text().length;
-            return $(this).text().substring(0,75) + (tLength>75?'...':'');
+            return $(this).text().substring(0, 75) + (tLength > 75 ? '...' : '');
         });
     });
 });
