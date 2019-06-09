@@ -3,9 +3,9 @@ require_once "App/Topic.php";
 
 class Popular_topicsController extends Controller
 {
-    public function out($topics, $fir, $sec, $page)
+    public function out($params = [])
     {
-        echo output('popular_topics', ['topics' => $topics, 'first' => $fir, 'second' => $sec, 'page' => $page]);
+        echo output('popular_topics', $params);
     }
 
     public function getPopularTopics($page)
@@ -15,7 +15,7 @@ class Popular_topicsController extends Controller
         $second = $first + 4;
         $obj = new Topic();
         $topics = $obj->get5Topics($first - 1, $second);
-        $this->out($topics, $first, $second, $page);
+        $this->out(['topics' => $topics, 'first' => $first, 'second' => $second, 'page' => $page]);
 
     }
 

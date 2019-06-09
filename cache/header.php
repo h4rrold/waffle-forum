@@ -49,7 +49,7 @@
                 <div class="nav__menu_drop">
                     <div class="menu_drop__logo_drop"><img src="/img/logo-fnl-white.png" alt="" class="logo_drop"></div>
                     <ul class="menu_drop">
-                        <li class="menu__item_drop"><a href="http://localhost/waffle-forum/main" class="menu__link_drop">Головна</a></li>
+                        <li class="menu__item_drop"><a href="http://localhost/waffle-forum" class="menu__link_drop">Головна</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Про нас</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Блог</a></li>
                         <li class="menu__item_drop"><a href="#" class="menu__link_drop">Завантаження</a></li>
