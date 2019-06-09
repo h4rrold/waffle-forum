@@ -1,3 +1,24 @@
+HEAD
+$( document ).ready(function() {
+
+    
+    $( ".button__burger" ).click(function() {
+   
+    $( ".nav__menu_drop").slideToggle( "slow", function() {
+        $( ".block-users-buttons" ).show(); 
+    $( ".button__burger" ).hide();
+    $( ".button__cross" ).show();
+   
+    
+    });
+    });
+    
+    $( ".button__cross" ).click(function() {
+    $( ".nav__menu_drop" ).slideToggle( "slow", function() {
+        $( ".block-users-buttons" ).hide(); 
+    $( ".button__cross" ).hide();
+    $( ".button__burger" ).show();
+    });
 $(document).ready(function () {
 
     $(".button__burger").click(function () {
@@ -8,6 +29,7 @@ $(document).ready(function () {
         });
         $(this).hide();
         $(".button__cross").show();
+
     });
 
     $(".button__cross").click(function () {
