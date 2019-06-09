@@ -9,6 +9,7 @@ html {
     -o-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
+    word-break: break-word;
     margin: 0;
 }
 
@@ -46,10 +47,9 @@ button {
     -webkit-appearance: none;
 }
 
-button:active {
-    outline: none;
-}
-
+button:focus {
+    outline: none !important;
+    }
 /* Remove excess padding and border in Firefox 4+ */
 button::-moz-focus-inner {
     border: 0;
@@ -607,7 +607,7 @@ button::-moz-focus-inner {
     font-weight: bold;
     color: #2D2929;
     font-size: 1.666rem;
-    word-break: break-all
+    word-break: break-word;
 }
 
 .title-topic:hover {
@@ -660,6 +660,10 @@ button::-moz-focus-inner {
     color: #2D2929;
 }
 
+.topic-author:hover {
+    color: #17828E;
+}
+
 .fl-stat__topic-post-date {
     /* margin-left:10px; */
 }
@@ -690,16 +694,15 @@ button::-moz-focus-inner {
 
 .topic-content__text-topic {
     margin-top: 20px;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .text-topic {
-    font-size: 1.388rem;
+    font-size: 1.4rem;
     line-height: 1.9;
 }
 
 .topic-content__read-more {
-
     margin-top: 20px;
 }
 
@@ -817,6 +820,12 @@ button::-moz-focus-inner {
     white-space: normal;
 }
 
+.support-item__subtext:hover {
+    color: #17828E;
+    text-decoration: underline;
+
+}
+
 .support-item__item-text {
     font-size: 1.38rem;
     margin-bottom: 10px;
@@ -912,7 +921,12 @@ button::-moz-focus-inner {
     color: #17828E;
     cursor: pointer;
     font-weight: bold;
-    word-break: break-all
+    word-break: break-word;
+}
+
+.title-catagory:hover {
+    color: #17828E;
+    text-decoration: underline;
 }
 
 .category-content__info-stat {
@@ -920,6 +934,7 @@ button::-moz-focus-inner {
 }
 
 .category-content__category-description {
+    word-break: break-word;
     margin-top: 40px;
 }
 
@@ -938,7 +953,7 @@ button::-moz-focus-inner {
 .last-post-topic__text {
     font-size: 1.11rem;
     color: #2D2929;
-    word-break: break-all
+    word-break: break-word;
 }
 
 .post-info__last-post-topic-author {}
@@ -992,7 +1007,7 @@ button::-moz-focus-inner {
 
 .category-description__text {
     font-size: 1.44rem;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .category-content__info-stat-bottom {}
@@ -1029,6 +1044,161 @@ button::-moz-focus-inner {
     color: #17828E;
 }
 
+/********************************************
+*******************Discussion*****************
+**********************************************/
+.page__discussion-path {
+    padding: 0 30px;
+
+}
+.pagе__discussion{
+    margin-top: 40px;
+}
+.page__discussion-path__text {
+    color: #2D2929;
+    font-size: 2.358rem;
+}
+.page__discussion-path__text i{
+    font-size: 1.7rem;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.discussion__topic {
+    border: 1px solid #707070;
+    padding: 40px 30px;
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+.discussion {}
+.info-stat-post{}
+.info-stat-post__post-author{}
+.info-stat-post__post-author{
+    font-size: 1.4rem;
+    color: #2D2929;
+}
+.info-stat-post__post-author:hover{
+    color: #17828E;
+}
+.info-stat-post__group-author {
+    font-size: 1.4rem;
+    color: #2D2929;
+}
+.info-stat-post__post-date{
+    white-space: nowrap;
+    color: #17828E;
+    font-size: 1.4rem;
+}
+.topic-content__text-topic {}
+.fl-stat__group-author{
+    
+font-size: 1.4rem;
+}
+.text-topic {}
+
+.discussion__post {
+    max-width: 1340px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid  #707070;
+    padding: 40px 30px;
+}
+
+.post {
+    display: flex;
+}
+
+.post__user-avatar {
+vertical-align: top;
+}
+.post__post-content{
+    width: 77%;
+    display: inline-block;
+    /* padding: 50px; */
+    padding-left: 30px;
+}
+.info-stat__post-author{
+    font-size: 1.5rem;
+}
+.post-author{
+    color:#2D2929;
+}
+.post-author:hover{
+    
+    color:#17828E;
+}
+.post-content_post-text{}
+.post-text{
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+.post-content__rate-post{
+
+margin-top: 60px;
+}
+.rate-post{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rate-post__text{font-size: 1.44rem;margin-right: 20px;word-break: keep-all;}
+.rate-post__button{
+    color: #17828E;
+    border: 1px solid #17828E;
+    font-size: 1.44rem;
+    padding: 8px 24px;
+    border-radius: 25px;
+    margin-right: 20px;
+    min-width: 87px;
+    cursor: pointer;
+}
+.rate-post__button:last-child{
+    margin-right: 0;
+}
+.rate-post_result{
+    display: none;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+.rate-post__text_result{
+    font-size: 1.44rem;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+.rate-post__stat-post_result i {
+    color: #17828E;
+    font-size: 1.5rem;
+}
+.rate-post__stat-post_result{
+    display: inline-flex;
+    align-items: center;
+}
+.stat-post__positive{
+    margin-left: 10px;
+    color: #17828E;
+    font-size: 1.4rem;
+}
+.stat-post__negative{
+    margin-left: 10px;
+    font-size: 1.4rem;
+    color: #17828E;
+}
+.page__sign-in-proposition-button{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center ;
+
+}
+.sign-in-proposition-button{
+    border: 1px solid #17828E;
+    border-radius: 44px;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background: #53B2AC;
+    padding: 22px 26px;
+    cursor: pointer;
+}
 /****************************************************
 *****************************************************
 *********************MEDIA QUERIES******************
@@ -1113,7 +1283,16 @@ button::-moz-focus-inner {
 }
 
 @media screen and (max-width:1340px) {
+    /******CATAGORIES****/
     .categories {
+        max-width: 998px;
+    }
+
+    /********DISCUSSION*******/
+    .discussion__topic{
+        max-width:998px;
+    }
+    .discussion__post{
         max-width: 998px;
     }
 }
@@ -1175,12 +1354,20 @@ button::-moz-focus-inner {
     }
 
     .title-topic {
-        text-align: center;
+        /* text-align: center; */
     }
 }
 
 @media screen and (max-width:998px) {
     .categories {
+        max-width: 740px;
+    }
+
+    /********DISCUSSION*******/
+    .discussion__topic{
+        max-width:740px;
+    }
+    .discussion__post{
         max-width: 740px;
     }
 }
@@ -1260,6 +1447,23 @@ button::-moz-focus-inner {
 
     /*************CATAGORIES*****/
     .categories {
+        max-width: 608px;
+    }
+    .fr-stat .stat__delimeter{
+        font-size: 0;
+    }
+    .fl-stat .stat__delimeter{
+        font-size: 0;
+    }
+    /********DISCUSSION*******/
+
+    .topic-author{
+        margin-right: 5px;
+    }
+    .discussion__topic{
+        max-width:608px;
+    }
+    .discussion__post{
         max-width: 608px;
     }
 }
@@ -1364,6 +1568,26 @@ button::-moz-focus-inner {
         max-width: 460px;
         padding: 0 30px 20px 30px;
     }
+
+    /********DISCUSSION*******/
+    .discussion__topic{
+        max-width:460px;
+    }
+    .discussion__post{
+        margin-top: 50px;
+        max-width: 460px;
+    }
+    .rate-post{
+        font-size: 1.2rem;
+        margin-top: 30px;
+    }
+    .post-content__rate-post{
+        margin-top: 30px;
+    }
+    .rate-post_result{
+        font-size: 1.2rem;
+    }
+    
 }
 
 @media screen and (max-width: 430px) {
@@ -1425,8 +1649,12 @@ button::-moz-focus-inner {
 
     .user-avatar {
         display: inline-block;
-    }
 
+    }
+    .user-avatar img{
+        width: 60px;
+        height: 60px;
+    }
     .title-topic {
         font-weight: bold;
         color: #2D2929;
@@ -1528,12 +1756,55 @@ button::-moz-focus-inner {
     .text-topic {
         width: 100%;
         font-size: 1.0rem;
-        line-height: 1.9;
+        line-height: 1.5;
     }
 
     /**************CATALOG**************/
     .categories {
         max-width: 348px;
         padding: 0 30px 20px 30px;
+    }
+
+    /********DISCUSSION*******/
+
+    .fl-stat__group-author{
+        font-size: 1.2rem;
+    }
+    .discussion__topic{
+        max-width:348px;
+        
+    }
+    .discussion__post{
+        max-width: 348px;
+        
+    }
+    .post-author{
+        font-size: 1.2rem;
+    }
+    .info-stat-post .stat__delimeter{
+        font-size: 1.2rem;
+    }
+    .info-stat-post__group-author{
+        font-size: 1.2rem;
+    }
+    .info-stat-post__post-date{
+        font-size: 1.2rem;
+    }
+    .post__post-content{
+        padding-left: 20px;
+    }
+    .post-text{
+        font-size: 1.0rem;
+        line-height: 1.5rem;
+    }
+    
+    .rate-post{
+        font-size: 1.0rem;
+    }
+    .post-content__rate-post{
+        margin-top: 30px;
+    }
+    .rate-post_result{
+        font-size: 1.0rem;
     }
 }
