@@ -26,7 +26,7 @@
                         <button class="rate-post__button" data-inc="-1">Ні</button>
                     </div>
                     <div class="rate-post_result">
-                        <span class="rate-post__text_result">Дякуємо за ваш відгук!</span>
+                        <span class="rate-post__text_result"></span>
                         <div class="rate-post__stat-post_result">
                             <i class="fas fa-thumbs-up"></i>
                             <span class="stat-post__positive">{{$pluses}}</span>

@@ -8,8 +8,8 @@
             success: function(data) {
                 for(let key in data) {
                     let post = $('[data-post_id = '+data[key]['post_id']+']');
-                    $(post).find('.post-content__rate-post').hide();
-                    $(post).find('rate-post_result').show();
+                    $(post).find('.rate-post').hide();
+                    $(post).find('.rate-post_result').show();
                 }
             }
         })
