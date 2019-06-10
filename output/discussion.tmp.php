@@ -57,9 +57,9 @@
                                     <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
                                 </form>
                             </div>
-                            <div class="page__sign-in-proposition-button">
+                            <div class="page__send-post-button">
                                 <form action="" type="post">
-                                    <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
+                                    <input type="submit" class="send-post-button" value="Увійти, щоб залишити коментар">
                                 </form>
                             </div>
                         <?php endif;?>
