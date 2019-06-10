@@ -182,12 +182,12 @@
                   <input type="file" id="favicon" accept="image/jpeg,image/png" name="siteicon">
                   <br>
                   
-                  <img src="http://localhost/favicon.ico" height='80'/>
+                  <img src="/favicon.ico" height='80'/>
                   <br>
                   Logo
                   <input type="file" id="logo" name="sitelogo">
                   <br>
-                  <img src="http://localhost/logo.jpg" height="80" />
+                  <img src="/logo.jpg" height="80" />
                   <br>
                   <input type="submit" value="Send">
                 </form>
