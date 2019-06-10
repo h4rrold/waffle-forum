@@ -21,13 +21,19 @@ class ProcessAuth extends Model
                         $_SESSION["username"] = $username;                            
                         
                         header("location: panel");
-                    } else {
-                        $username_err = "You don't have permissions to that site."
+                    } 
+                    else 
+                    {
+                        $username_err = "You don't have permissions to that site.";
                     }
-                } else {
+                } 
+                else 
+                {
                     $password_err = "The password you entered was not valid.";
                 }
-            } else {
+            } 
+            else 
+            {
                 $username_err = "No account found with that username.";
             } 
         }
