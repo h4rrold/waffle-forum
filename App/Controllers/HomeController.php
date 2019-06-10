@@ -2,8 +2,8 @@
 
 class HomeController extends Controller
 {
-    public function out()
+    public function out($params = [])
     {
-
+        echo $this->buildPage(output('home', $params));
     }
 }
