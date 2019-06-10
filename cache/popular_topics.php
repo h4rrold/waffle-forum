@@ -16,9 +16,27 @@
                             class="topic-amount-display__text"><?=$first?>-<?=$second?></span>тем</span>
             </div>
             <div class="page__next-button">
-                <form action="<?=$page + 1?>" method="post">
-                    <input class="next-button" type="submit" value="Наступна">
-                </form>
+<!--                <form action="<?=$page + 1?>" method="post">-->
+<!--                    <input class="next-button" type="submit" value="Наступна">-->
+<!--                </form>-->
+
+            <?php if ($page != 1) : ?>
+                <a href="http://localhost/waffle-forum/community/popular-topics/1" class="post-page-nav__item">
+                    <i class="fas fa-angle-double-left"></i>
+                </a>
+                <a href="http://localhost/waffle-forum/community/popular-topics/<?=$page - 1?>" class="post-page-nav__item">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+            <?php endif;?>
+            <?php if ($second < 20) : ?>
+                </a>
+                <a href="http://localhost/waffle-forum/community/popular-topics/<?=$page + 1?>" class="post-page-nav__item">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+                <a href="http://localhost/waffle-forum/community/popular-topics/99999" class="post-page-nav__item">
+                    <i class="fas fa-angle-double-right"></i>
+                </a>
+            <?php endif;?>
             </div>
         </div>
     </div>
