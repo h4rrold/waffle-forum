@@ -32,7 +32,7 @@ class DiscussionController extends Controller
         if($second > $amount['count']) $second = $amount['count'];
         $topic['title_topic'] = $title_topic;
         $topic['directory_id'] = $directory_id;
-        $topic['directory_name'] = $directory_name;
+        $topic['directory_name'] = urldecode($directory_name);
         $topic['id_page'] = $id_page;
         $topic['first'] = $first;
         $topic['second'] = $second;

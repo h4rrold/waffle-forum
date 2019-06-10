@@ -34,7 +34,7 @@ class Route
     public function parse()
     {
         $correct_route = [];
-        $uri = $_GET['route'] ?? substr($_SERVER['REQUEST_URI'],6);
+        $uri = $_GET['route'] ?? substr($_SERVER['REQUEST_URI'],14);
 
         $arr_route = explode('/', $uri);
         if($uri == ''){
@@ -59,7 +59,7 @@ class Route
         }
         if(empty($correct_route)){
             http_response_code(404);
-            header('Location: pages/404.html');
+            header('Location: '.ROUTE_PATH.'/pages/404.html');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {
