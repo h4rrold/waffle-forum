@@ -13,11 +13,13 @@
     <script src="{{ROUTE_PATH}}/scripts/jquery-3.4.1.js"></script>
     <script src="{{ROUTE_PATH}}/scripts/wysibb/jquery.wysibb.js"></script>
     <script src="{{ROUTE_PATH}}/scripts/main.js"></script>
+
 </head>
 <body class="body">
 <header class="header">
     <div class="header__content">
         <div class="header__logo">
+
             <a href="#" class="logo-link"><img src="{{ROUTE_PATH}}/img/logo-fnl-white.png" class="logo" alt="Лого Waffle forum"></a>
         </div>
         <div class="header__nav_drop">
