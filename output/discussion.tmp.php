@@ -72,19 +72,19 @@
                 <div class="page__post-page-nav">
                     <div class="post-page-nav">
                         <?php if ($id_page != 1) : ?>
-                        <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/1" class="post-page-nav__item">
+                        <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/1" class="post-page-nav__item">
                             <i class="fas fa-angle-double-left"></i>
                         </a>
-                        <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page - 1}}" class="post-page-nav__item">
+                        <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page - 1}}" class="post-page-nav__item">
                                 <i class="fas fa-angle-left"></i>
                         </a>
                         <?php endif;?>
                         <?php if ($id_page < $count) : ?>
                             </a>
-                            <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page + 1}}" class="post-page-nav__item">
+                            <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page + 1}}" class="post-page-nav__item">
                                 <i class="fas fa-angle-right"></i>
                             </a>
-                            <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/999999" class="post-page-nav__item">
+                            <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/999999" class="post-page-nav__item">
                                 <i class="fas fa-angle-double-right"></i>
                             </a>
                         <?php endif;?>

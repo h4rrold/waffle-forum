@@ -5,21 +5,21 @@ class LogController extends Controller
 {
     public function out($params = [])
     {
-        echo output('login', $params);
+        echo output('sign-in', $params);
     }
 
     public function login()
     {
         $obj = new User();
         $errors = array();
-        if (isset($_POST['log-lp'])) {
-            $nick_email = htmlspecialchars($_POST['login-in-log_page']);
+        if (isset($_POST['send'])) {
+            $nick_email = htmlspecialchars($_POST['nickoremail']);
             $pass = htmlspecialchars($_POST['pas-in']);
-            //setcookie('login-in-log_page', $login_em);
+            setcookie('login-in-log_page', $nick_email);
 
             $user = $obj->nickORemail($nick_email);
             if (count($user) < 0) {
-                if (password_verify($pass, $user['password'])) {
+                if (password_verify($pass.$user['salt'], $user['pass'])) {
                     $_SESSION['logged-user']['login'] = $user['login'];
                     $_SESSION['logged-user']['id'] = $user['id'];
                     setcookie('session_id', session_id());

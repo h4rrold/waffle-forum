@@ -2,7 +2,7 @@
     <div class="category">
         <div class="category__category-content">
             <div class="category-content__title-category">
-                <a href="http://localhost/waffle-forum/community/categories/{{$id}}/{{$name}}" class="title-catagory">{{$name}}</a>
+                <a href="{{ROUTE_PATH}}/community/categories/{{$id}}/{{$name}}" class="title-catagory">{{$name}}</a>
             </div>
             <div class="category-content__info-stat">
                 <div class="info-stat-category">

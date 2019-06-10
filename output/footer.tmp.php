@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="footer__bottom-content">
-            <div class="bottom-content__logo"><a href ="#" class="logo-link"><img src="/waffle-forum/img/logo-fnl-dark-blue.png" alt="" class="logo"></a></div>
+            <div class="bottom-content__logo"><a href ="#" class="logo-link"><img src="{{ROUTE_PATH}}/img/logo-fnl-dark-blue.png" alt="" class="logo"></a></div>
             <div class="bottom-content__social">
                 <div class="social">
                     <div class="social__icon"><i class="fab fa-google-plus-square"></i></div>

@@ -8,7 +8,7 @@
                 <div class="page-registration__container-registration">
                     <div class="container-registration">
                         <div class="container-registration__reg-form">
-                            <form action="http://localhost/waffle-forum/reg" class="reg-form" method="post">
+                            <form action="{{ROUTE_PATH}}/reg" class="reg-form" method="post">
                                     <div class="reg-form__input-item">
                                             <div class="input-item__text">Email</div>
                                             <input type="email" name="email" id="" class="input-item">

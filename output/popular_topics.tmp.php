@@ -21,19 +21,19 @@
 <!--                </form>-->
 
             <?php if ($page != 1) : ?>
-                <a href="http://localhost/waffle-forum/community/popular-topics/1" class="post-page-nav__item">
+                <a href="{{ROUTE_PATH}}/community/popular-topics/1" class="post-page-nav__item">
                     <i class="fas fa-angle-double-left"></i>
                 </a>
-                <a href="http://localhost/waffle-forum/community/popular-topics/{{$page - 1}}" class="post-page-nav__item">
+                <a href="{{ROUTE_PATH}}/community/popular-topics/{{$page - 1}}" class="post-page-nav__item">
                     <i class="fas fa-angle-left"></i>
                 </a>
             <?php endif;?>
             <?php if ($second < 20) : ?>
                 </a>
-                <a href="http://localhost/waffle-forum/community/popular-topics/{{$page + 1}}" class="post-page-nav__item">
+                <a href="{{ROUTE_PATH}}/community/popular-topics/{{$page + 1}}" class="post-page-nav__item">
                     <i class="fas fa-angle-right"></i>
                 </a>
-                <a href="http://localhost/waffle-forum/community/popular-topics/99999" class="post-page-nav__item">
+                <a href="{{ROUTE_PATH}}/community/popular-topics/99999" class="post-page-nav__item">
                     <i class="fas fa-angle-double-right"></i>
                 </a>
             <?php endif;?>
