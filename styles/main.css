@@ -23,9 +23,7 @@ a:hover {
     color: #ffff;
     text-decoration: none;
 }
-a:hover{
-    color: #2D2929;
-}
+
 li {
     list-style: none;
 }
@@ -234,14 +232,13 @@ button::-moz-focus-inner {
     font-size: 1.388rem;
     color: #ffffff;
 }
-
+.locale_drop i:hover{
+    cursor: pointer;
+}
 
 .button__burger {
-
     color: #ffffff;
-
     font-size: 1.388rem;
-
     cursor: pointer;
 }
 
@@ -369,14 +366,16 @@ button::-moz-focus-inner {
     margin-right: 5px;
     font-size: 1.111rem;
 }
-
+.locale i:hover{
+    cursor: pointer;
+}
 .menu__item {
     margin-right: 28px;
 }
 
 .menu__item_active {
     padding-bottom: 30px;
-    border-bottom: 8px solid #ffffff;
+    border-bottom: 10px solid #ffffff;
 }
 
 .menu__item:last-child {
@@ -386,7 +385,9 @@ button::-moz-focus-inner {
 .menu__link {
     font-size: 1rem;
 }
-
+.menu__link:hover{
+    text-decoration: underline;
+}
 .start-main {
     max-width: 100%;
     min-height: 240px;
@@ -673,6 +674,7 @@ button::-moz-focus-inner {
 
 .topic-author:hover {
     color: #17828E;
+    text-decoration: underline;
 }
 
 .fl-stat__topic-post-date {
@@ -965,8 +967,12 @@ button::-moz-focus-inner {
     font-size: 1.11rem;
     color: #2D2929;
     word-break: break-word;
+    cursor: pointer;
 }
-
+.last-post-topic__text:hover{
+    color: #2D2929;
+    text-decoration: underline;
+}
 .post-info__last-post-topic-author {}
 
 .last-post-topic-author {
@@ -1289,6 +1295,90 @@ button::-moz-focus-inner {
     text-decoration: underline;
 }
 
+/****************************************************
+*****************************************************
+*********************REGISTRATION******************
+****************************************************
+***************************************************/
+.content_no-margin{
+    margin: 0;
+}
+.content__page-registration{
+    margin: 0;
+}
+.page-registration{
+    background: url(../img/registration-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 30px;
+}
+.page-registration__page-title{
+}
+.page-title_white{
+    color: #ffffff;
+    font-size: 2.8rem;
+    text-align: center;
+}
+.page-subtitle_white{
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-align: center;
+}
+.page-registration__container-registration{
+    margin-top: 35px;
+}
+.container-registration{
+    background: #ffffff;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.93;
+    padding: 30px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.container-registration__reg-form{
+    display: flex;
+    justify-content: center;
+}
+.reg-form{}
+.reg-form__input-item{    text-align: center;}
+.input-item__text{
+    font-size:1.3rem;
+}
+.input-item{
+    border:1px solid #707070;
+    border-radius: 2px;
+    padding: 3px 6px;
+    font-size:1.1rem;
+    min-width: 200px;
+    margin: 5px 0;
+    height: auto;
+}
+.input-item__text{
+    text-align: center;
+}
+.input-item__text-error{
+    display: block;
+    font-size: 0.8rem;
+    color:#e02f48;
+    margin-bottom: 5px;
+}
+.reg-form__button-create{
+    margin-top: 35px;
+}
+.button-create{
+    cursor: pointer;
+    background: #53B2AC;
+    font-size: 1.2777rem;
+    padding: 15px 30px;
+    color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 44px;
+    outline: 0;
+}
 
 
 /****************************************************
