@@ -5,7 +5,7 @@ class Popular_topicsController extends Controller
 {
     public function out($params = [])
     {
-        echo output('popular_topics', $params);
+        echo $this->buildPage(output('popular-topics', $params));
     }
 
     public function getPopularTopics($page)

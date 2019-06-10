@@ -1,4 +1,5 @@
 <?php
+require_once "bbcode/bb.php";
 
 class Post extends  Model
 {
@@ -22,7 +23,10 @@ class Post extends  Model
         for ($i = 0; $i < count($posts); $i++){
             $date = new DateTime($posts[$i]['datetime']);
             $posts[$i]['datetime'] = $date->format('j ').$this->monthes[$date->format('n')].$date->format(' Y');
+            $posts[$i]['text'] =  print_page($posts[$i]['text']);
+
         }
+
         return $posts;
     }
 
@@ -30,6 +34,7 @@ class Post extends  Model
     {
         return MyPDO::first( "SELECT COUNT(posts.id) as count FROM topics, posts WHERE posts.topic_id = ? AND topics.id = ? GROUP BY topics.id", [$id_topic, $id_topic]);
     }
+
 
     public function increaseRatingByUserVote(){
         if(!array_key_exists('logged-user', $_SESSION)){
@@ -62,5 +67,10 @@ class Post extends  Model
         return MyPDO::run('SELECT post_id FROM votes WHERE user_id = :user_id', array(
             'user_id' => $user_id
         ));
+    }
+
+    public function Send($id_topic, $post_text)
+    {
+        return MyPDO::insert("INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `text`) VALUES (NULL, ?, ?, ?)", [$_SESSION['logged-user']['id'], $id_topic, $post_text]);
     }
 }

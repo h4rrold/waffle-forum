@@ -5,7 +5,7 @@ class CategoriesController extends  Controller
 {
     public function out($params = [])
     {
-        echo output('categories', $params );
+        echo $this->buildPage(output('categories', $params));
     }
 
     public function getCategories()
