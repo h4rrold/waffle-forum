@@ -49,73 +49,45 @@
                 <div class="page__editor">
                     <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>
-                <div class="page__sign-in-proposition-button">
-                    <form action="" type="post">
-                    <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
-                    </form>
-                    
-                </div>
-                
-                        <div class="discussion__post">
-                            <div class="post">
-                                <div class="post__user-avatar">
-                                    <a href="" class="user-avatar">
-                                        <img src="/waffle-forum/img/user-avatar.png">
-                                    </a>
-                                </div>
-                                <div class="post__post-content">
-                                    <div class="post-content__info-stat-post">
-                                        <div class="info-stat-post">
-                                            <span class="info-stat-post__post-author">
-                                                    <a href="#" class="post-author">Jacob</a>
-                                            </span>
-                                            <span class="stat__delimeter">|</span>
-                                            <span class="info-stat-post__group-author">Користувач</span>
-                                            <span class="stat__delimeter">|</span>
-                                            <span class="info-stat-post__post-date">12 травня 2019</span>
-                                        </div>
-                                        <div class="post-content_post-text">
-                                            <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                                                    ullamco... </p>
-                                        </div>
-                                        <div class="post-content__rate-post">
-                                            <div class="rate-post">
-                                                <span class="rate-post__text">Чи був цей коментар корисний?</span>
-                                                <button class="rate-post__button">Так</button>
-                                                <button class="rate-post__button">Ні</button>
-                                            </div>
-                                            <div class="rate-post_result">
-                                                <span class="rate-post__text_result">Дякуємо за ваш відгук!</span>
-                                                <div class="rate-post__stat-post_result">
-                                                    <i class="fas fa-thumbs-up"></i>
-                                                    <span class="stat-post__positive">5</span>
-                                                    <span class="stat__delimeter">|</span>
-                                                    <i class="fas fa-thumbs-down"></i>
-                                                    <span class="stat-post__negative">5</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <?php if (isset($_COOKIE['session_id']) && ($_COOKIE['session_id'] == session_id())) : ?>
+
+                        <?php else:?>
+                            <div class="page__sign-in-proposition-button">
+                                <form action="" type="post">
+                                    <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
+                                </form>
                             </div>
-                        </div>                                 
+                        <?php endif;?>
+                    <?php
+                    foreach ($posts as $post){
+                        echo output('post', $post);
+                    }
+                    ?>
                     </div>              
+                </div>
+                <div class="page__topic-amount-display">
+                <span class="topic-amount-display">Відображено<span
+                            class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>
                 </div>
                 <div class="page__post-page-nav">
                     <div class="post-page-nav">
-                        <a href=#" class="post-page-nav__item">
+                        <?php if ($id_page != 1) : ?>
+                        <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/1" class="post-page-nav__item">
                             <i class="fas fa-angle-double-left"></i>
                         </a>
-                        <a href=#" class="post-page-nav__item">
+                        <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page - 1}}" class="post-page-nav__item">
                                 <i class="fas fa-angle-left"></i>
                         </a>
-                        <a href=#" class="post-page-nav__item">
-                            <i class="fas fa-angle-right"></i>
-                        </a>
-                        <a href=#" class="post-page-nav__item">
-                            <i class="fas fa-angle-double-right"></i>
-                        </a>
+                        <?php endif;?>
+                        <?php if ($id_page < $count) : ?>
+                            </a>
+                            <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page + 1}}" class="post-page-nav__item">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                            <a href="http://localhost/waffle-forum/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/999999" class="post-page-nav__item">
+                                <i class="fas fa-angle-double-right"></i>
+                            </a>
+                        <?php endif;?>
                     </div>
                 </div>
                 

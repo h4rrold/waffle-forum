@@ -1,5 +1,6 @@
 <?php
 require_once "App/Topic.php";
+require_once "App/Post.php";
 
 class DiscussionController extends Controller
 {
@@ -8,10 +9,36 @@ class DiscussionController extends Controller
         echo output('discussion', $params);
     }
 
-    public function getTopic( $directory_id, $directory_name, $id_topic, $title_topik)
+    public function get10Posts($id_topic, $first, $second)
     {
+        $obj = new Post();
+        return $obj->getPosts($id_topic, $first, $second);
+    }
+
+    public function getTopicAndPosts( $directory_id, $directory_name, $id_topic, $title_topic, $id_page)
+    {
+        $obj = new Post();
+        $amount_of_posts = 3;
+
+        $amount = $obj->getCountPosts($id_topic);
+
+        if($id_page > ceil($amount['count']/$amount_of_posts)) header("Location:/waffle-forum/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/".ceil($amount['count']/$amount_of_posts));
+        if($id_page < 1) header("Location:/waffle-forum/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
         $obj = new Topic();
         $topic = $obj->getTopic($id_topic);
-        $this->out(['avatar' => $topic['avatar'], 'title_topic' => $title_topik, 'nickname' => $topic['nickname'], 'datetime' => $topic['datetime'], 'amount_of_posts' => $topic['amount_of_posts'], 'amount_of_views' => $topic['amount_of_views'], 'text' => $topic['text'], 'directory_id' => $directory_id, 'directory_name' => $directory_name]);
+        $first = ($id_page - 1) * $amount_of_posts + 1;
+        $second = $first + $amount_of_posts - 1;
+        $posts = $this->get10Posts($id_topic,$first - 1, $amount_of_posts);
+        if($second > $amount['count']) $second = $amount['count'];
+        $topic['title_topic'] = $title_topic;
+        $topic['directory_id'] = $directory_id;
+        $topic['directory_name'] = $directory_name;
+        $topic['id_page'] = $id_page;
+        $topic['first'] = $first;
+        $topic['second'] = $second;
+        $topic['count'] = $amount['count']/$amount_of_posts;
+        $topic['posts'] = $posts;
+
+        $this->out($topic);
     }
 }

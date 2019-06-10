@@ -10,11 +10,15 @@ class Popular_topicsController extends Controller
 
     public function getPopularTopics($page)
     {
-        if($page > 4) header('Location:/waffle-forum/popular-topics/4');
-        $first = ($page - 1) * 5 + 1;
-        $second = $first + 4;
+        $amount_of_topics = 3;
+
+        if($page > ceil(20/$amount_of_topics)) header('Location:/waffle-forum/community/popular-topics/'.ceil(20/$amount_of_topics));
+        if($page < 1) header('Location:/waffle-forum/community/popular-topics/1');
+        $first = ($page - 1) * $amount_of_topics + 1;
+        $second = $first + $amount_of_topics - 1;
+        if($second > 20) $second = 20;
         $obj = new Topic();
-        $topics = $obj->get5Topics($first - 1, $second);
+        $topics = $obj->getTopTopics($first - 1, $amount_of_topics);
         $this->out(['topics' => $topics, 'first' => $first, 'second' => $second, 'page' => $page]);
 
     }
