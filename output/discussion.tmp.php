@@ -83,23 +83,24 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/sending" method="post">
                 <div class="page__editor">
-                    <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                    <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>
                         <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
                             <div class="page__send-post-button">
-                                <form action="" method="post">
-                                    <input type="submit" class="send-post-button" value="Відправити">
-                                </form>
+
+                                    <input type="submit" name="send" class="send-post-button" value="Відправити">
+
                             </div>
                         <?php else:?>
                             <div class="page__sign-in-proposition-button">
-                                <form action="" method="post">
+                                <form action="{{ROUTE_PATH}}/login" method="get">
                                     <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
                                 </form>
                             </div>
                         <?php endif;?>
+                        </form>
                     <?php
                     foreach ($posts as $post){
                         echo output('post', $post);
