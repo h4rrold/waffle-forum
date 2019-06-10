@@ -12,6 +12,6 @@ else
 {
     $server = 'localhost';
     $username = 'root';
-    $password = '';
-    $db = 'waffle-forum';
+    $password = 'admin';
+    $db = 'waffle_forum';
 }
