@@ -57,12 +57,7 @@ class Users extends Model
             //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             return false;
         }
-        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-            //echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
-        } else {
-            //echo "Sorry, there was an error uploading your file.";
-        }
-        $upload = $s3->upload($bucket, $target_dir . "$futurename.$imageFileType", fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+        $upload = $s3->upload($bucket, $target_dir . "$futurename.$imageFileType", fopen($_FILES['avatar']['tmp_name'], 'rb'), 'public-read');
         return htmlspecialchars($upload->get('ObjectURL'));
     }
     public function updateUserById()
