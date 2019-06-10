@@ -212,6 +212,7 @@ button::-moz-focus-inner {
 }
 
 .search-button_drop i {
+    color:#ffffff;
     font-size: 1.38rem;
     vertical-align: bottom;
 }
@@ -297,6 +298,7 @@ button::-moz-focus-inner {
     font-weight: 600;
     display: inline-block;
     cursor: pointer;
+    color:#ffffff;
     margin-right: 35px;
 }
 
@@ -306,7 +308,9 @@ button::-moz-focus-inner {
     vertical-align: baseline;
 
 }
-
+.sign-in-button-text{
+    color:#ffffff;
+}
 .nav__registration-button {
     display: inline-block;
     margin-right: 28px;
@@ -345,6 +349,7 @@ button::-moz-focus-inner {
 }
 
 .search-button {
+    color: #ffffff;
     font-size: 0.83rem;
 }
 
@@ -360,6 +365,7 @@ button::-moz-focus-inner {
 
 .locale__text {
     font-size: 0.83rem;
+    color: #ffffff;
 }
 
 .locale i {
@@ -521,6 +527,7 @@ button::-moz-focus-inner {
 .community-menu__link_drop {
     font-weight: bolder;
     font-size: 1.38rem;
+    color: #ffffff;
 }
 
 .community-menu__link_drop_active {
@@ -2214,6 +2221,7 @@ button::-moz-focus-inner {
     }
 
     .sign-in-button-text {
+        color:#ffffff;
         font-size: 0.9rem;
     }
 
