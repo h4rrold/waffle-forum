@@ -42,12 +42,29 @@ $(document).ready(function () {
     $(".rate-post__button").click(function () {
         let container = $(this).closest('.post-content__rate-post');
 
-        $(container).children(".rate-post_result").slideToggle(200);
-        $(container).children('.rate-post').hide();
-        $(container).children('.rate-post_result').css('display', 'flex');
+        let inc = $(this).data('inc');
+        let user_id = $(this).parent().data('user_id');
+        let post_id = $(this).closest('.discussion__post').data('post_id');
+        $.ajax({
+            url: '/waffle-forum/community/categories/increaseRatingByUserVote',
+            data: {
+                inc: inc,
+                user_id: user_id,
+                post_id: post_id
+            },
+            dataType: 'Text',
+            method: 'POST',
+            success: function(data) {
+                $(container).children(".rate-post_result").slideToggle(200);
+                $(container).children('.rate-post').hide();
+                $(container).children('.rate-post_result').css('display', 'flex');
+                $(container).find('.rate-post__text_result').html(data);
+            }
+        })
     });
 
     $('.last-post-topic__text').each(function () {
+
         $(this).text(function () {
             let tLength = $(this).text().length;
             return $(this).text().substring(0, 75) + (tLength > 75 ? '...' : '');

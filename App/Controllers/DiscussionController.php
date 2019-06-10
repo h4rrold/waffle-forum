@@ -41,4 +41,15 @@ class DiscussionController extends Controller
 
         $this->out($topic);
     }
+
+
+    public function increaseRatingByUserVote(){
+        $post_model = new Post();
+        echo $post_model->increaseRatingByUserVote();
+    }
+
+    public function getVotedPosts(){
+        $post_model = new Post();
+        echo json_encode($post_model->getVotedPosts());
+    }
 }

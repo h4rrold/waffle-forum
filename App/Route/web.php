@@ -6,9 +6,12 @@ Route::get('community/categories/{id_category}/{category}', 'TopicsController@ge
 Route::get('community/categories', 'CategoriesController@getCategories');
 Route::get('community/home', 'HomeController@out');
 Route::get('community/recent', 'RecentController@out');
+Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');
+Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController@getVotedPosts');
 
 //MAIN
 Route::get('registration', 'RegController@out');
 Route::post('reg', 'RegController@registration');
 Route::get('login', 'LogController@out');
 Route::post('log', 'LogController@login');
+

@@ -1,4 +1,20 @@
 <title>{{$title}} - {{$title_topic}}</title>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: '/waffle-forum/community/categories/getCurrentlyVotedPosts',
+            dataType: 'JSON',
+            method: 'POST',
+            success: function(data) {
+                for(let key in data) {
+                    let post = $('[data-post_id = '+data[key]['post_id']+']');
+                    $(post).find('.post-content__rate-post').hide();
+                    $(post).find('rate-post_result').show();
+                }
+            }
+        })
+    });
+</script>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">
