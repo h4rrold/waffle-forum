@@ -1428,7 +1428,10 @@ button::-moz-focus-inner {
     justify-content: center;
 }
 .sign-in-form{}
-.sign-in-form__input-item{    text-align: center;}
+.sign-in-form__input-item{
+        text-align: center;
+    margin-top: 10px;
+    }
 .input-item__text{
     font-size:1.3rem;
 }
@@ -1451,7 +1454,9 @@ button::-moz-focus-inner {
     margin-bottom: 5px;
 }
 .sign-in-form__button-sign-in{
-    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
 .button-sign-in{
     cursor: pointer;
@@ -1463,7 +1468,27 @@ button::-moz-focus-inner {
     border-radius: 44px;
     outline: 0;
 }
+.container-sign-in__propose-reg{
+    margin-top: 20px;
+    text-align: center;
+}
+.propose-reg__text{
 
+}
+.propose-reg__reg-button-link{
+    margin-left: 10px;
+}
+.reg-button-link   {
+    border: 1px solid #17828E;
+    border-radius:5px;
+    font-size: 0.8rem;
+    color: #17828E;
+    padding: 10px;
+}
+.reg-button-link:hover{
+    text-decoration: underline;
+    color: #17828E;
+}
 /****************************************************
 *****************************************************
 *********************MEDIA QUERIES******************
@@ -2154,5 +2179,12 @@ button::-moz-focus-inner {
     }
     .page__editor{
         max-width: 348px;
+    }
+
+    /******sign-in*******/
+
+    .propose-reg__reg-button-link{
+        display: block;
+        margin-top: 20px;
     }
 }
