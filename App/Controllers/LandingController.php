@@ -5,6 +5,6 @@ class LandingController extends Controller
 {
     public function out($params = [])
     {
-        echo output('landing', $params);
+        echo $this->buildPage(output('landing', $params));
     }
 }

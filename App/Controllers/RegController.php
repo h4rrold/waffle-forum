@@ -4,7 +4,7 @@ class RegController extends Controller
 {
     public function out($params = [])
     {
-        echo output('registration', $params);
+        echo $this->buildPage(output('registration', $params));
     }
 
     public function registration()

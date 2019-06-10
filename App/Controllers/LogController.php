@@ -5,7 +5,7 @@ class LogController extends Controller
 {
     public function out($params = [])
     {
-        echo output('sign-in', $params);
+        echo $this->buildPage(output('sign-in', $params));
     }
 
     public function login()

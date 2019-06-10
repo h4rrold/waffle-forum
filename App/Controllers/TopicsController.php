@@ -5,7 +5,7 @@ class TopicsController extends Controller
 {
     public function out($params = [])
     {
-        echo output('topics', $params);
+        echo $this->buildPage(output('topics', $params));
     }
 
     public function getTopics($id_category, $category)

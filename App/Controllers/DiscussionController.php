@@ -6,7 +6,7 @@ class DiscussionController extends Controller
 {
     public function out($params = [])
     {
-        echo output('discussion', $params);
+        echo $this->buildPage(output('discussion', $params));
     }
 
     public function get10Posts($id_topic, $first, $second)
