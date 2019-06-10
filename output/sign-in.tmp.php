@@ -1,3 +1,4 @@
+<title>{{$title}} - Вхід</title>
 <div class="content_no-margin">
         <div class="content__page-sign-in">
             <div class="page-sign-in">

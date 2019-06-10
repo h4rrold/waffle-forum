@@ -1,4 +1,3 @@
-<title>{{$title}} - {{urldecode($directory_name)}}</title>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">
@@ -19,7 +18,7 @@
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
         <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
-                    class="button_drop__text">Forum menu</span></button>
+                class="button_drop__text">Forum menu</span></button>
         <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
@@ -36,28 +35,3 @@
         <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/recent" class="community-menu__link">Недавні</a></li>
     </nav>
 </div>
-<div class="content">
-    <div class="content__page">
-        <div class="page">
-            <div class="page__page-title">
-                <h2 class="page-title">Теми</h2>
-            </div>
-            <div class="page__popular">
-                <div class="popular"><?php
-                    foreach ($topics as $topic) {
-                        echo output('topic', ['directory_id' => $directory_id, 'directory_name' => $directory_name, 'topic_id' => $topic['id'], 'user_avatar' => $topic['avatar'], 'title_topic' => $topic['title'], 'user_name' => $topic['nickname'], 'topic_date' => $topic['datetime'], 'post_amount' => $topic['amount_of_posts'], 'views_amount' => $topic['amount_of_views'], 'topic_text' => $topic['text']]);
-                    } ?></div>
-            </div>
-<!--            <div class="page__topic-amount-display">-->
-<!--                <span class="topic-amount-display">Відображено<span-->
-<!--                        class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>-->
-<!--            </div>-->
-<!--            <div class="page__next-button">-->
-<!--                <form action="{{$page + 1}}" method="post">-->
-<!--                    <input class="next-button" type="submit" value="Наступна">-->
-<!--                </form>-->
-            </div>
-        </div>
-    </div>
-</div>
-

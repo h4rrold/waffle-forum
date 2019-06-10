@@ -1,4 +1,5 @@
- <div class="content_no-margin">
+<title>{{$title}} - Реєстрація</title>
+<div class="content_no-margin">
         <div class="content__page-registration">
             <div class="page-registration">
                 <div class="page-registration__page-title">
