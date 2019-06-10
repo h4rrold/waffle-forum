@@ -1383,6 +1383,89 @@ button::-moz-focus-inner {
 
 /****************************************************
 *****************************************************
+*********************SIGN-IN***********************
+****************************************************
+***************************************************/
+
+.content__page-page-sign-in{
+    margin: 0;
+}
+.page-sign-in{
+    background: url(../img/registration-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 30px;
+}
+.page-sign-in__page-title{
+}
+.page-title_white{
+    color: #ffffff;
+    font-size: 2.8rem;
+    text-align: center;
+}
+.page-subtitle_white{
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-align: center;
+}
+.page-sign-in__container-sign-in{
+    margin-top: 35px;
+}
+.container-sign-in{
+    background: #ffffff;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.93;
+    padding: 30px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.container-sign-in__sign-in-form{
+    display: flex;
+    justify-content: center;
+}
+.sign-in-form{}
+.sign-in-form__input-item{    text-align: center;}
+.input-item__text{
+    font-size:1.3rem;
+}
+.input-item{
+    border:1px solid #707070;
+    border-radius: 2px;
+    padding: 3px 6px;
+    font-size:1.1rem;
+    min-width: 200px;
+    margin: 5px 0;
+    height: auto;
+}
+.input-item__text{
+    text-align: center;
+}
+.input-item__text-error{
+    display: block;
+    font-size: 0.8rem;
+    color:#e02f48;
+    margin-bottom: 5px;
+}
+.sign-in-form__button-sign-in{
+    margin-top: 35px;
+}
+.button-sign-in{
+    cursor: pointer;
+    background: #53B2AC;
+    font-size: 1.2777rem;
+    padding: 15px 30px;
+    color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 44px;
+    outline: 0;
+}
+
+/****************************************************
+*****************************************************
 *********************MEDIA QUERIES******************
 ****************************************************
 ***************************************************/
