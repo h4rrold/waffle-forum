@@ -59,7 +59,7 @@ class Route
         }
         if(empty($correct_route)){
             http_response_code(404);
-            header('Location: '.ROUTE_PATH.'/pages/404.html');
+            header('Location: '.ROUTE_PATH.'/pages/404.php');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {
