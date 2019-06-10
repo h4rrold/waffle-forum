@@ -26,11 +26,11 @@
                     <div class="nav__sign-in-button_drop">
                         <div class="sign-in-button_drop">
                             <i class="fas fa-user"></i>
-                            <a href="#" class="sign-in-button-text">Вхід</a>
+                            <a href="http://localhost/waffle-forum/login" class="sign-in-button-text">Вхід</a>
                         </div>
                     </div>
                     <div class="nav__registration-button_drop">
-                        <a href="#" class="registration-button_drop"><i class="fas fa-user-plus"></i>Реєстрація</a>
+                        <a href="http://localhost/waffle-forum/registration" class="registration-button_drop"><i class="fas fa-user-plus"></i>Реєстрація</a>
                     </div>
                     <div class="nav__search-button_drop">
 
@@ -73,11 +73,11 @@
             <div class="nav__sign-in-button">
                 <div class="sign-in-button">
                     <i class="fas fa-user"></i>
-                    <a href="#" class="sign-in-button-text">Вхід</a>
+                    <a href="http://localhost/waffle-forum/login" class="sign-in-button-text">Вхід</a>
                 </div>
             </div>
             <div class="nav__registration-button">
-                <a href="#" class="registration-button"><i class="fas fa-user-plus"></i>Реєстрація</a>
+                <a href="http://localhost/waffle-forum/registration" class="registration-button"><i class="fas fa-user-plus"></i>Реєстрація</a>
             </div>
             <div class="nav__search-button">
 

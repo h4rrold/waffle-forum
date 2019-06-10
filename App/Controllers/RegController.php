@@ -9,13 +9,15 @@ class RegController extends Controller
 
     public function registration()
     {
-        if (isset($_POST['send-lpp'])) {
+        $bytes = random_bytes(5);
+        $salt = bin2hex($bytes);
+        if (isset($_POST['send'])) {
             $nickname = htmlspecialchars($_POST['nick-in']);
             $email = htmlspecialchars($_POST['email']);
             $pass = htmlspecialchars($_POST['pas-in']);
             $pass_2 = htmlspecialchars($_POST['pas-in2']);
-            //setcookie('login-in', $login);
-            //setcookie('mail', $mail);
+            setcookie('nick-in', $nickname);
+            setcookie('email', $email);
             $obj = new User();
             if (trim($nickname) == '') {
                 $this->errors[] = "Введіть логін!";
@@ -38,8 +40,10 @@ class RegController extends Controller
                         $this->errors[] = "Повторний пароль введено неправильно!";
                     }
             if (empty($this->errors)) {
-                $obj->addUser($nickname, $email, $pass);
-                $this->answer_reg = "Ви успішно зареєструвалися!";
+                $bytes = random_bytes(5);
+                $salt = bin2hex($bytes);
+                $obj->addUser($nickname, $email, $pass, $salt);
+                //$this->answer_reg = "Ви успішно зареєструвалися!";
             }
         }
         $this->out();
