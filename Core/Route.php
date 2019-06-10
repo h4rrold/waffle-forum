@@ -57,8 +57,9 @@ class Route
                 break;
             }
         }
-        if(empty($correct_route)){http_response_code(404);
-        header('Location:http://localhost/waffle-forum/pages/404.html');
+        if(empty($correct_route)){
+            http_response_code(404);
+            header('Location: pages/404.html');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {
