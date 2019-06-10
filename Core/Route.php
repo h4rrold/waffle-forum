@@ -38,7 +38,7 @@ class Route
 
         $arr_route = explode('/', $uri);
         if($uri == ''){
-            return ['LandingController', 'out'];
+            return ['HomeController', 'out'];
         }
 
         foreach ($this->routes as $route) {
