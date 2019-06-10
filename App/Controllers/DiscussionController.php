@@ -42,6 +42,17 @@ class DiscussionController extends Controller
         $this->out($topic);
     }
 
+
+
+    public function increaseRatingByUserVote(){
+        $post_model = new Post();
+        echo $post_model->increaseRatingByUserVote();
+    }
+
+    public function getVotedPosts(){
+        $post_model = new Post();
+        echo json_encode($post_model->getVotedPosts());
+    }
     public function SendPost($directory_id, $directory_name, $id_topic, $title_topic)
     {
         if (isset($_POST['send'])) {
@@ -49,8 +60,6 @@ class DiscussionController extends Controller
             $post_text = trim(stripslashes(htmlspecialchars($_POST['post_text'])));
             $obj->Send($id_topic, $post_text);
             header('Location: '.ROUTE_PATH."/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
-
-
         }
     }
 }

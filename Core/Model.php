@@ -76,5 +76,21 @@ class Model
         $this->attributes = $attributes;
     }
 
+    public function input_post($field){
+        if(array_key_exists($field, $_POST)){
+            return $_POST[$field];
+        } else{
+            return null;
+        }
+    }
+
+    public function input_get($field){
+        if(array_key_exists($field, $_GET)){
+            return $_GET[$field];
+        } else{
+            return null;
+        }
+    }
+
 
 }
