@@ -18,7 +18,7 @@ class LogController extends Controller
             setcookie('nick_email_log', $nick_email);
 
             $user = $obj->nickORemail($nick_email);
-            if (count($user) < 0) {
+            if (isset($user)) {
                 if (password_verify($pass.$user['salt'], $user['pass'])) {
                     $_SESSION['logged-user']['nickname'] = $user['nickname'];
                     $_SESSION['logged-user']['id'] = $user['id'];

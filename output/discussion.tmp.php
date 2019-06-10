@@ -49,7 +49,7 @@
                 <div class="page__editor">
                     <textarea name="" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>
-                        <?php if (isset($_COOKIE['session_id']) && isset($_COOKIE['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
+                        <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
 
                         <?php else:?>
                             <div class="page__sign-in-proposition-button">

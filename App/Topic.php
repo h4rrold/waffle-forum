@@ -22,7 +22,6 @@ class Topic extends Model
         $topics = MyPDO::run("SELECT topics.id, users.avatar, topics.title, users.nickname, posts.datetime, topics.amount_of_posts, topics.amount_of_views, posts.text FROM users, topics, posts WHERE topics.directory_id = ? AND users.id = posts.user_id AND topics.id = posts.topic_id GROUP BY topics.id ORDER BY topics.amount_of_views DESC", [$id_category]);
         for ($i = 0; $i < count($topics); $i++){
             $date = new DateTime($topics[$i]['datetime']);
-            echo date('n');
             $topics[$i]['datetime'] = $date->format('j ').$this->monthes[$date->format('n')].$date->format(' Y');
         }
         return $topics;
