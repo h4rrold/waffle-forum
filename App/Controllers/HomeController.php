@@ -5,5 +5,5 @@ class HomeController extends Controller
     public function out()
     {
 
-  }
+    }
 }
