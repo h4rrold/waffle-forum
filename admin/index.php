@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-
+require('../vendor/autoload.php');
 //$_SESSION["loggedin"] = false;
 require_once 'Core/config.php';
 require_once 'Core/Middleware.php';

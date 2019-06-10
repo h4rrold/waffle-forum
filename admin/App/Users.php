@@ -20,7 +20,13 @@ class Users extends Model
 
     private function uploadAvatar($id)
     {
-        $target_dir = "../uploads/user$id";
+        $s3 = new Aws\S3\S3Client([
+            'version'  => '2006-03-01',
+            'region'   => 'us-east-2',
+        ]);
+        $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
+        $target_dir = "user$id/";
+        $futurename = uniqid();
         $target_file = $target_dir . DIRECTORY_SEPARATOR . basename($_FILES["avatar"]["name"]);
         if(!is_dir($target_dir))
         {
@@ -51,12 +57,8 @@ class Users extends Model
             //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             return false;
         }
-        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-            //echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
-        } else {
-            //echo "Sorry, there was an error uploading your file.";
-        }
-        return $_FILES["avatar"]["name"];
+        $upload = $s3->upload($bucket, $target_dir . "$futurename.$imageFileType", fopen($_FILES['avatar']['tmp_name'], 'rb'), 'public-read');
+        return htmlspecialchars($upload->get('ObjectURL'));
     }
     public function updateUserById()
     {  
@@ -75,7 +77,7 @@ class Users extends Model
         {
             $response[] = [true, "Avatar changed successfully."];
             $sql .= "avatar = ?, ";
-            $params[] = "https://forum-waffle.herokuapp.com/uploads/user$id/$isAvatar";
+            $params[] = "$isAvatar";
             
         }
         else if(isset($_FILES["avatar"]) && $_FILES['avatar']['name'] != ''){
