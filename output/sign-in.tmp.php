@@ -11,7 +11,7 @@
                             <form action="{{ROUTE_PATH}}/log" class="sign-in-form" method="post">
                                     <div class="sign-in-form__input-item">
                                             <div class="input-item__text">Email or Nickname</div>
-                                            <input type="text" minlength="3" name="nickoremail" id="" class="input-item">
+                                            <input type="text" minlength="3" value="{{$_COOKIE['nick_email_log'] ?? ''}}" name="nickoremail" id="" class="input-item">
                                         <!--навешен display для first-child--><div class="input-item__text-error">Ви ввели некоректний email</div>
                                         </div>
                                 <div class="sign-in-form__input-item">

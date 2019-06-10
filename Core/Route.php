@@ -91,6 +91,7 @@ class Route
 
     public static function run()
     {
+
         $ctrl = self::getInstance()->parse();
         require_once("App/Controllers/" . $ctrl[0] . ".php");
         $obj = new $ctrl[0]();

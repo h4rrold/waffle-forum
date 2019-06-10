@@ -109,14 +109,16 @@
                                     <input type="submit" name="send" class="send-post-button" value="Відправити">
 
                             </div>
+                        </form>
                         <?php else:?>
                             <div class="page__sign-in-proposition-button">
-                                <form action="{{ROUTE_PATH}}/login" method="get">
+                                </form>
+                                <form action="{{ROUTE_PATH}}/login" method="post">
                                     <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
                                 </form>
                             </div>
                         <?php endif;?>
-                        </form>
+
                     <?php
                     foreach ($posts as $post){
                         echo output('post', $post);
