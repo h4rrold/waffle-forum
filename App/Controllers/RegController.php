@@ -6,7 +6,17 @@ class RegController extends Controller
     {
         echo $this->buildPage(output('registration', $params));
     }
-
+    public function emailExists()
+    {
+        $userModel = new User();
+        $email = $_POST['email'];
+        if(!empty($userModel->validEmail($email)))
+        {
+            echo(json_encode(['res' => false]));
+        }
+        else echo(json_encode(['res' => true]));
+        return;
+    }
     public function registration()
     {
         $bytes = random_bytes(5);

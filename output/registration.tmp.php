@@ -1,4 +1,5 @@
 <title>{{$title}} - Реєстрація</title>
+<script src="{{ROUTE_PATH}}/scripts/register.js"></script>
 <div class="content_no-margin">
         <div class="content__page-registration">
             <div class="page-registration">
@@ -12,22 +13,22 @@
                             <form action="{{ROUTE_PATH}}/reg" class="reg-form" method="post">
                                     <div class="reg-form__input-item">
                                             <div class="input-item__text">Email</div>
-                                            <input type="email" name="email" id="" class="input-item">
-                                        <!--навешен display для first-child--><div class="input-item__text-error">Ви ввели некоректний email</div>
+                                            <input type="email" name="email" class="input-item">
+                                        <!--навешен display для first-child--><div class="input-item__text-error" id="email" style="display: none;">Пользователь с таким E-Mail существует</div>
                                         </div>
                                 <div class="reg-form__input-item">
                                    <div class="input-item__text">Нік</div>
-                                    <input type="text" minlength="3" name="nick-in" id="" class="input-item">
+                                    <input type="text" minlength="3" name="nick-in" class="input-item">
                                     <div class="input-item__text-error">Текст помилки буде тут</div>
                                 </div>
                                 <div class="reg-form__input-item">
                                     <div class="input-item__text">Пароль</div>
-                                    <input type="password" minlength="8" name="pas-in" id="" class="input-item">
+                                    <input type="password" minlength="8" name="pas-in" class="input-item">
                                     <div class="input-item__text-error">Текст помилки буде тут</div>
                                 </div>
                                 <div class="reg-form__input-item">
                                     <div class="input-item__text">Повторіть пароль</div>
-                                    <input type="password" minlength="8" name="pas-in2" id="" class="input-item">
+                                    <input type="password" minlength="8" name="pas-in2" class="input-item">
                                     <div class="input-item__text-error">Текст помилки буде тут</div>                                           
                                 </div>
                                 <div class="reg-form__button-create">
