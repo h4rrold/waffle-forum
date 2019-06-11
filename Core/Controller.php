@@ -39,7 +39,5 @@ public $middleware = [];
         echo $content;
         echo output('footer');
         return ob_get_clean();
-
     }
-
 }

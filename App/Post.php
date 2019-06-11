@@ -63,10 +63,11 @@ class Post extends  Model
     }
 
     public function getVotedPosts(){
-        $user_id = $_SESSION['logged-user']['id'];
-        return MyPDO::run('SELECT post_id FROM votes WHERE user_id = :user_id', array(
-            'user_id' => $user_id
-        ));
+        $where_id = '';
+        if(array_key_exists('logged-user', $_SESSION)){
+            $where_id .= ' WHERE user_id = '.$_SESSION['logged-user']['id'];
+        }
+        return MyPDO::run("SELECT post_id FROM votes $where_id");
     }
 
     public function Send($id_topic, $post_text)

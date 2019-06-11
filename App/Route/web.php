@@ -11,6 +11,9 @@ Route::get('community/recent', 'RecentTopicsController@out');
 Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');
 Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController@getVotedPosts');
 
+
+//api calls
+Route::post('emailExists', 'RegController@emailExists');
 //MAIN
 Route::get('registration', 'RegController@out');
 Route::post('reg', 'RegController@registration');
