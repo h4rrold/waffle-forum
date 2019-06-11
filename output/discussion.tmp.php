@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/sending" method="post">
+                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/sending" method="post">
                 <div class="page__editor">
                     <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>

@@ -71,4 +71,14 @@ class Topic extends Model
         $topic['datetime'] = $date->format('j ').$this->monthes[$date->format('n')].$date->format(' Y');
         return $topic;
     }
+
+    public function incViews($amount, $id_topic)
+    {
+        MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_views` = ? WHERE `topics`.`id` = ?", [$amount, $id_topic]);
+    }
+
+    public function incPosts($amount, $id_topic)
+    {
+        MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_posts` = ? WHERE `topics`.`id` = ?", [$amount, $id_topic]);
+    }
 }

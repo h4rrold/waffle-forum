@@ -17,7 +17,8 @@ class Post extends  Model
         FROM posts 
         LEFT JOIN users ON posts.user_id = users.id
         LEFT JOIN votes ON posts.id = votes.post_id 
-        WHERE users.id = posts.user_id AND posts.topic_id = ? 
+        WHERE users.id = posts.user_id AND posts.topic_id = ?
+        GROUP BY posts.id 
         ORDER BY posts.datetime DESC 
         LIMIT $first, $second", [$id_topic]);
         for ($i = 0; $i < count($posts); $i++){
