@@ -23,6 +23,7 @@ class LogController extends Controller
                     $obj->last_login($user['id']);
                     $_SESSION['logged-user']['nickname'] = $user['nickname'];
                     $_SESSION['logged-user']['id'] = $user['id'];
+                    $_SESSION['logged-user']['avatar'] = $user['avatar'];
                     setcookie('session_id', session_id());
                     header('Location:'.ROUTE_PATH.'/');
                 } else {

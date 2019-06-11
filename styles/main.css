@@ -408,7 +408,7 @@ button::-moz-focus-inner {
     display: inline-block;
 }
 .user-buttons-block_signed{
-    display: none;
+    display: inline-block;
     margin-right: 25px;
 }
 .user-buttons-block_signed__user-avatar{
