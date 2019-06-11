@@ -22,4 +22,12 @@ class User extends Model
         return MyPDO::first("SELECT * FROM `users` WHERE `email` LIKE ? OR `nickname` LIKE ?", [$nick_email, $nick_email]);
 
     }
+
+    public function last_login($id_user)
+    {
+        $date = DateTime::createFromFormat('U', time() + 10800, new DateTimeZone('+02:00'));
+        $date = date_format($date, 'Y-m-d H:i:s');
+
+        MyPDO::runWithoutFetch("UPDATE `users` SET `last_login` = ? WHERE `users`.`id` = ?", [$date, $id_user]);
+    }
 }
