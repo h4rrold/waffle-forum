@@ -9,7 +9,7 @@ class DiscussionController extends Controller
         echo $this->buildPage(output('discussion', $params));
     }
 
-    public function get10Posts($id_topic, $first, $second)
+    public function getCountPosts($id_topic, $first, $second)
     {
         $obj = new Post();
         return $obj->getPosts($id_topic, $first, $second);
@@ -28,7 +28,7 @@ class DiscussionController extends Controller
         $topic = $obj->getTopic($id_topic);
         $first = ($id_page - 1) * $amount_of_posts + 1;
         $second = $first + $amount_of_posts - 1;
-        $posts = $this->get10Posts($id_topic, $first - 1, $amount_of_posts);
+        $posts = $this->getCountPosts($id_topic, $first - 1, $amount_of_posts);
         if ($second > $amount['count']) $second = $amount['count'];
         $topic['title_topic'] = $title_topic;
         $topic['directory_id'] = $directory_id;

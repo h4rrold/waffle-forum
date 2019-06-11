@@ -1,4 +1,4 @@
-<title>{{$title}} - Популярні теми</title>
+<title>{{$title}} - Недавні теми</title>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">
@@ -19,7 +19,7 @@
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
         <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
-                    class="button_drop__text">Forum menu</span></button>
+                class="button_drop__text">Forum menu</span></button>
         <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
@@ -40,7 +40,7 @@
     <div class="content__page">
         <div class="page">
             <div class="page__page-title">
-                <h2 class="page-title">Популярні теми</h2>
+                <h2 class="page-title">Недавні теми</h2>
             </div>
             <div class="page__popular">
                 <div class="popular"><?php
@@ -50,30 +50,30 @@
             </div>
             <div class="page__topic-amount-display">
                 <span class="topic-amount-display">Відображено<span
-                            class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>
+                        class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>
             </div>
             <div class="page__next-button">
-<!--                <form action="{{$page + 1}}" method="post">-->
-<!--                    <input class="next-button" type="submit" value="Наступна">-->
-<!--                </form>-->
+                <!--                <form action="{{$page + 1}}" method="post">-->
+                <!--                    <input class="next-button" type="submit" value="Наступна">-->
+                <!--                </form>-->
 
-            <?php if ($page != 1) : ?>
-                <a href="{{ROUTE_PATH}}/community/popular-topics/1" class="post-page-nav__item">
-                    <i class="fas fa-angle-double-left"></i>
-                </a>
-                <a href="{{ROUTE_PATH}}/community/popular-topics/{{$page - 1}}" class="post-page-nav__item">
-                    <i class="fas fa-angle-left"></i>
-                </a>
-            <?php endif;?>
-            <?php if ($second < 20) : ?>
-                </a>
-                <a href="{{ROUTE_PATH}}/community/popular-topics/{{$page + 1}}" class="post-page-nav__item">
-                    <i class="fas fa-angle-right"></i>
-                </a>
-                <a href="{{ROUTE_PATH}}/community/popular-topics/99999" class="post-page-nav__item">
-                    <i class="fas fa-angle-double-right"></i>
-                </a>
-            <?php endif;?>
+                <?php if ($page != 1) : ?>
+                    <a href="{{ROUTE_PATH}}/community/recent-topics/1" class="post-page-nav__item">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                    <a href="{{ROUTE_PATH}}/community/recent-topics/{{$page - 1}}" class="post-page-nav__item">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                <?php endif;?>
+                <?php if ($second < 20) : ?>
+                    </a>
+                    <a href="{{ROUTE_PATH}}/community/recent-topics/{{$page + 1}}" class="post-page-nav__item">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                    <a href="{{ROUTE_PATH}}/community/recent-topics/99999" class="post-page-nav__item">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                <?php endif;?>
             </div>
         </div>
     </div>
