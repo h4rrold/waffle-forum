@@ -1,3 +1,4 @@
+<title>{{$title}} - Головна</title>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">

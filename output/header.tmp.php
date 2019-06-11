@@ -26,6 +26,29 @@
         <div class="header__nav_drop">
             <nav class="nav_drop__button">
                 <div class="block-users-buttons">
+
+                        <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
+                        <div class="user-buttons-block_signed_drop">
+                        <span class="user-buttons-block_signed__user-avatar">
+                            <a href="" class="user-avatar user-avatar_header">
+                                <img src="{{$_SESSION['logged-user']['avatar']}}">
+                            </a>
+                        </span>
+                            <a class="username">{{$_SESSION['logged-user']['nickname']}}</a>
+                        </div><?php else:?>
+                        <div class = "block-users-buttons_unsigned_drop">
+                            <div class="nav__sign-in-button_drop">
+                                <div class="sign-in-button_drop">
+                                    <i class="fas fa-user"></i>
+                                    <a href="{{ROUTE_PATH}}/login" class="sign-in-button-text">Вхід</a>
+                                </div>
+                            </div>
+                            <div class="nav__registration-button_drop">
+                                <a href="{{ROUTE_PATH}}/registration" class="registration-button_drop"><i
+                                            class="fas fa-user-plus"></i>Реєстрація</a>
+                            </div>
+                        </div>
+                        <?php endif;?>
                     <div class="nav__search-button_drop">
                         <a href="#" class="search-button_drop"><i class="fas fa-search"></i>Пошук</a>
 

@@ -36,7 +36,7 @@
                     <div class="topic-content__text-topic">
                         <p class="text-topic">{{$topic_text}}</p>
                     </div>
-                    <div class="topic-content__read-more"><a href="#" class="read-more">Читати детальніше</a>
+                    <div class="topic-content__read-more"><a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$topic_id}}/{{$title_topic}}/1" class="read-more">Читати детальніше</a>
                     </div>
                 </div>
             </div>
