@@ -16,4 +16,5 @@ else
     $password = '';
 
     $db = 'waffle-forum';
+
 }

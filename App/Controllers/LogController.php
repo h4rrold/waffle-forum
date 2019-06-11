@@ -20,10 +20,12 @@ class LogController extends Controller
             $user = $obj->nickORemail($nick_email);
             if (isset($user)) {
                 if (password_verify($pass.$user['salt'], $user['pass'])) {
+                    $obj->last_login($user['id']);
                     $_SESSION['logged-user']['nickname'] = $user['nickname'];
                     $_SESSION['logged-user']['id'] = $user['id'];
+                    $_SESSION['logged-user']['avatar'] = $user['avatar'];
                     setcookie('session_id', session_id());
-                    header('Location:'.ROUTE_PATH.'/community/home');
+                    header('Location:'.ROUTE_PATH.'/');
                 } else {
                     $errors[] = "Невірний пароль!";
                 }

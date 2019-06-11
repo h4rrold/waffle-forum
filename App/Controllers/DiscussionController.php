@@ -9,7 +9,7 @@ class DiscussionController extends Controller
         echo $this->buildPage(output('discussion', $params));
     }
 
-    public function get10Posts($id_topic, $first, $second)
+    public function getSomePosts($id_topic, $first, $second)
     {
         $obj = new Post();
         return $obj->getPosts($id_topic, $first, $second);
@@ -28,7 +28,7 @@ class DiscussionController extends Controller
         $topic = $obj->getTopic($id_topic);
         $first = ($id_page - 1) * $amount_of_posts + 1;
         $second = $first + $amount_of_posts - 1;
-        $posts = $this->get10Posts($id_topic, $first - 1, $amount_of_posts);
+        $posts = $this->getSomePosts($id_topic, $first - 1, $amount_of_posts);
         if ($second > $amount['count']) $second = $amount['count'];
         $topic['title_topic'] = $title_topic;
         $topic['directory_id'] = $directory_id;
@@ -40,6 +40,7 @@ class DiscussionController extends Controller
         $topic['posts'] = $posts;
 
         $this->out($topic);
+        $obj->incViews($topic['amount_of_views'] + 1, $id_topic);
     }
 
 
@@ -53,12 +54,14 @@ class DiscussionController extends Controller
         $post_model = new Post();
         echo json_encode($post_model->getVotedPosts());
     }
-    public function SendPost($directory_id, $directory_name, $id_topic, $title_topic)
+    public function SendPost($directory_id, $directory_name, $id_topic, $title_topic, $amount_of_posts)
     {
         if (isset($_POST['send'])) {
             $obj = new Post();
             $post_text = trim(stripslashes(htmlspecialchars($_POST['post_text'])));
             $obj->Send($id_topic, $post_text);
+            $obj = new Topic();
+            $obj->incPosts($amount_of_posts + 1, $id_topic);
             header('Location: '.ROUTE_PATH."/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
         }
     }

@@ -26,14 +26,17 @@
             <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/home" class="community-menu__link_drop">Домашня</a></li>
             <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link_drop">Категорії</a></li>
             <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link_drop community-menu__link_drop_active">Популярні</a></li>
-            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/recent" class="community-menu__link_drop">Недавні</a></li>
+            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/recent-topics/1" class="community-menu__link_drop">Недавні</a></li>
+
         </nav>
     </div>
     <nav class="community-menu">
         <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/home" class="community-menu__link">Домашня</a></li>
+
         <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link">Категорії</a></li>
         <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link community-menu__link_active">Популярні</a></li>
-        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/recent" class="community-menu__link">Недавні</a></li>
+        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/recent-topics/1" class="community-menu__link">Недавні</a></li>
+
     </nav>
 </div>
 <div class="content">
@@ -45,7 +48,7 @@
                 <div class="pagе__categories">
                     <div class="categories">
                     <?php foreach ($categories as $category)
-                        echo output('category', ['id' => $category['id'], 'name' => $category['name'], 'topic_last_title' => $category['title'], 'last_post_date' => $category['MaxDate'], 'nickname' => $category['nickname'], 'amount_of_topics' => $category['amount_of_topics'], 'amount_of_posts' => $category['amount_of_posts']]);
+                        echo output('category', ['id_topic' => $category['id_topic'], 'id' => $category['id'], 'name' => $category['name'], 'topic_last_title' => $category['title'], 'last_post_date' => $category['MaxDate'], 'nickname' => $category['nickname'], 'amount_of_topics' => $category['amount_of_topics'], 'amount_of_posts' => $category['amount_of_posts']]);
                     ?>
                     </div>
                 </div>

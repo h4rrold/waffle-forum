@@ -8,7 +8,7 @@
                 <div class="info-stat-category">
                     <div class="info-stat__last-post-topic">
                         <div class="last-post-topic">Останнє в:
-                            <!--Підставити ссилку в href--><a href="#" class="last-post-topic__text">{{$topic_last_title}}</a>
+                            <!--Підставити ссилку в href--><a href="{{ROUTE_PATH}}/community/categories/{{$id}}/{{$name}}/{{$id_topic}}/{{$topic_last_title}}/1" class="last-post-topic__text">{{$topic_last_title}}</a>
                         </div>
                     </div>
                     <div class="info-stat-category__post-info">

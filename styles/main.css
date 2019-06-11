@@ -408,7 +408,7 @@ button::-moz-focus-inner {
     display: inline-block;
 }
 .user-buttons-block_signed{
-    display: none;
+    display: inline-block;
     margin-right: 25px;
 }
 .user-buttons-block_signed__user-avatar{
@@ -1828,16 +1828,15 @@ button::-moz-focus-inner {
         display: inline-block;
     }
     .user-buttons-block_signed_drop {
-        position: absolute;
         z-index: 98;
         -webkit-box-align: baseline;
         -ms-flex-align: baseline;
         align-items: baseline;
-        display: none;
+        display: inline-block;
         right: -1px;
         top: 0px;
         left: -63px;
-        /* padding: 0 30px; */
+         padding: 0 30px;
     }
     .header__nav {
         display: none;

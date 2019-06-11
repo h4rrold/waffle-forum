@@ -40,16 +40,16 @@
         </button>
         <nav class=" community-menu_drop">
             <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/home" class="community-menu__link_drop">Домашня</a></li>
-            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link_drop community-menu__link_drop_active">Категорії</a></li>
-            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link_drop ">Популярні</a></li>
-            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/recent" class="community-menu__link_drop">Недавні</a></li>
+            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link_drop">Категорії</a></li>
+            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link_drop community-menu__link_drop_active">Популярні</a></li>
+            <li class="community-menu__item_drop"><a href="{{ROUTE_PATH}}/community/recent-topics/1" class="community-menu__link_drop">Недавні</a></li>
         </nav>
     </div>
     <nav class="community-menu">
         <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/home" class="community-menu__link">Домашня</a></li>
-        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link community-menu__link_active">Категорії</a></li>
-        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link ">Популярні</a></li>
-        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/recent" class="community-menu__link">Недавні</a></li>
+        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/categories" class="community-menu__link">Категорії</a></li>
+        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/popular-topics/1" class="community-menu__link community-menu__link_active">Популярні</a></li>
+        <li class="community-menu__item"><a href="{{ROUTE_PATH}}/community/recent-topics/1" class="community-menu__link">Недавні</a></li>
     </nav>
 </div>
 <div class="content">
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/sending" method="post">
+                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/sending" method="post">
                 <div class="page__editor">
                     <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>
