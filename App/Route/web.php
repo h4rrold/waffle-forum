@@ -6,7 +6,7 @@ Route::get('community/categories/{id_category}/{category}/{id_topic}/{topic}/{am
 Route::get('community/categories/{id_category}/{category}/{id_topic}/{topic}/{id_page}', 'DiscussionController@getTopicAndPosts');
 Route::get('community/categories/{id_category}/{category}', 'TopicsController@getTopics');
 Route::get('community/categories', 'CategoriesController@getCategories');
-Route::get('community/home', 'HomeController@out');
+Route::get('community/home', 'HomeController@getHome');
 Route::get('community/recent', 'RecentTopicsController@out');
 Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');
 Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController@getVotedPosts');
