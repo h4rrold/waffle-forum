@@ -164,6 +164,12 @@ $(document).ready(function(){
             }               
         });
     }
+    $("#filter-userslist").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#usersel *").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     function getUsers() 
     {
         $.ajax({

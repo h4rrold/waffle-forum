@@ -107,35 +107,42 @@
             <div class="col-md-12" id="settings1" style="display: <?php if($page == 'settings1' || !$page) echo 'block'; else echo 'none';?> ;">
                 <h1 id="settingsname">Users settings</h1>
                 <form action="saveUsers" method="post" enctype="multipart/form-data">
-                    <select class="userslist" name="id">
-                    
-                    </select><br><br>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="usersel">Users list:</label>
+                        <input type="text" class="form-control" id="filter-userslist" placeholder="Enter nickname..." name="hidden"><br>
+                        <select class="form-control userslist" id="usersel" size="20" name="id">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
                     Nickname:<br>
-                    <input type="text" name="nickname"><br>
+                    <input type="text" name="nickname" class="form-control"><br>
                     Email:<br>
-                    <input type="email" name="email"><br>
+                    <input type="email" name="email" class="form-control"><br>
                     Password:<br>
-                    <input type="password" name="pass"><br>
+                    <input type="password" name="pass" class="form-control"><br>
                     Confirm password:<br>
-                    <input type="password" name=""><br>
+                    <input type="password" name="" class="form-control"><br>
                     Last login:<br>
-                    <input type="text" name="last_login" readonly disabled><br>
+                    <input type="text" name="last_login" readonly disabled class="form-control"><br>
                     Last ip:<br>
-                    <input type="text" name="last_ip" readonly disabled><br>
-                    Avatar:
-                    <input type="file" name="avatar"><br>
-                    <img id="preview-avatar" src="" height="80" width="80"/><br>
+                    <input type="text" name="last_ip" readonly disabled class="form-control"><br>
+                </div>
+                <div class="col-md-4">
+                Avatar:
+                    <input type="file" name="avatar" class="form-control"><br>
+                    <img id="preview-avatar" src="" height="80" width="80" style="margin-bottom:8px;"/><br>
                     Group:<br>
-                    <select class="usergroup" name="group_id">
+                    <select class="usergroup form-control" name="group_id">
                     
                     </select><br>
-                    Registration date:<br>
-                    <input type="text" name="regdate" readonly disabled><br>
-                    Amount of message:<br>
-                    <input type="number" name="amount_of_messages"><br>
+                    
                     Bio:<br>
-                    <textarea rows = "5" cols = "60" name = "bio" style="resize: none;"></textarea><br>
-                    <input type="submit" value="Send">
+                    <textarea rows = "5" cols = "60" name = "bio" style="resize: none;" class="form-control"></textarea><br>
+                    <input type="submit" value="Send" class="form-control">
+                    </div>
+                </div>
                 </form>
             </div>
             <div class="col-md-12" id="settings2" style="display: <?php if($page == 'settings2') echo 'block'; else echo 'none';?> ;">
