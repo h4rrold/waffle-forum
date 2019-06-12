@@ -56,7 +56,7 @@
         <div class="content__page">
             <div class="page">
                 <div class="page__discussion-path">
-                    <span class="page__discussion-path__text">Категорії<i class="fas fa-chevron-right"></i>{{$directory_name}}</span>
+                    <span class="page__discussion-path__text"><a href="{{ROUTE_PATH}}/community/categories">Категорії</a><i class="fas fa-chevron-right"></i><a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}">{{$directory_name}}</a></span>
                 </div>
                 <div class="pagе__discussion">
                     <div class="discussion">
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/sending" method="post">
+                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/{{$id_page}}sending" method="post">
                 <div class="page__editor">
                     <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
                 </div>

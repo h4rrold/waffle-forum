@@ -16,7 +16,7 @@
                 <div class="support-block__support-item">
                     <i class="fas fa-comments"></i>
                     <div class="support-item__item-text">Спитати в спільноті:</div>
-                    <a href="#" class="support-item__subtext">waffle-forum.com/community</a>
+                    <a href="{{ROUTE_PATH}}/community/home" class="support-item__subtext">waffle-forum.com/community</a>
                 </div>
             </div>
         </div>
