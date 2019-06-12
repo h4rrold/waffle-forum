@@ -34,6 +34,8 @@ public $middleware = [];
     }
     public function buildPage($content)
     {
+        $_SESSION['prev'] = $_SESSION['cur'] ?? $_SERVER['HTTP_REFERER'] ?? '';
+        $_SESSION['cur'] = $_SERVER['REQUEST_URI'];
         ob_start();
         echo output('header');
         echo $content;

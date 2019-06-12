@@ -21,6 +21,8 @@ else define('ROUTE_PATH', dirname($_SERVER['SCRIPT_NAME']));?>
 </head>
 <body>
 <div class="content">
+    <p>Не знайдено: <?php session_start();
+        echo $_SESSION['prev']?></p>
    <a href="<?php echo dirname(ROUTE_PATH)?>">Перейти на головну</a>
 </div>
 </body>

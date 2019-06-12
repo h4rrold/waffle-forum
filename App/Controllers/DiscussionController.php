@@ -38,22 +38,29 @@ class DiscussionController extends Controller
         $topic['second'] = $second;
         $topic['count'] = $amount['count'] / $amount_of_posts;
         $topic['posts'] = $posts;
+        $parts_of_url = explode('/', $_SESSION['cur']);
+
+        if ($_SESSION['prev'] !== $_SESSION['cur'] && $id_topic != $parts_of_url[count($parts_of_url) - 3]) {
+            $obj->incViews($topic['amount_of_views'] + 1, $id_topic);
+        }
 
         $this->out($topic);
-        $obj->incViews($topic['amount_of_views'] + 1, $id_topic);
+
     }
 
 
-
-    public function increaseRatingByUserVote(){
+    public function increaseRatingByUserVote()
+    {
         $post_model = new Post();
         echo $post_model->increaseRatingByUserVote();
     }
 
-    public function getVotedPosts(){
+    public function getVotedPosts()
+    {
         $post_model = new Post();
         echo json_encode($post_model->getVotedPosts());
     }
+
     public function SendPost($directory_id, $directory_name, $id_topic, $title_topic, $amount_of_posts)
     {
         if (isset($_POST['send'])) {
@@ -62,7 +69,7 @@ class DiscussionController extends Controller
             $obj->Send($id_topic, $post_text);
             $obj = new Topic();
             $obj->incPosts($amount_of_posts + 1, $id_topic);
-            header('Location: '.ROUTE_PATH."/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
+            header('Location: ' . ROUTE_PATH . "/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
         }
     }
 }
