@@ -37,11 +37,11 @@ class Route
     public function parse()
     {
         $correct_route = [];
-        $uri = $_GET['route'] ?? substr($_SERVER['REQUEST_URI'],6);
-
+        $uri = $_GET['route'] ?? '';
+        //die($uri);
 
         $arr_route = explode('/', $uri);
-        if($uri == '/'){
+        if($uri == ''){
             return ['Login', 'draw'];
         }
 
@@ -63,7 +63,7 @@ class Route
         }
         if(empty($correct_route)){
             http_response_code(404);    
-            header('Location: /admin/pages/404.php');
+            header('Location: /admin/pages/404.html');
         }
         $route = explode('/', $correct_route[0]);
         for($i = 0; $i < count($route); $i++) {

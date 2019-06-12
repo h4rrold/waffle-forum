@@ -6,21 +6,20 @@ class ProcessAuth extends Model
     {
         if(empty($username_err) && empty($password_err))
         {   
-            $sql = "SELECT id, nickname, pass, group_id FROM users WHERE nickname = ?";
+            $sql = "SELECT id, nickname, pass, salt, group_id FROM users WHERE nickname = ?";
             $result = MyPDO::run($sql, [$username]);
             if(count($result) > 0)
             {                    
                 $hashed_password = $result[0]['pass'];
-                if(password_verify($password, $hashed_password))
+                if(password_verify($password . $result[0]['salt'], $hashed_password))
                 {
                     if($result[0]['group_id'] == 1)
                     {
-                        session_start();
                         $_SESSION["loggedin"] = true;
                         $_SESSION["id"] = $result[0]['id'];
                         $_SESSION["username"] = $username;                            
                         
-                        header("location: panel");
+                        return [true];
                     } 
                     else 
                     {
@@ -37,6 +36,6 @@ class ProcessAuth extends Model
                 $username_err = "No account found with that username.";
             } 
         }
-        return [$username_err, $password_err];
+        return [false, $username_err, $password_err];
     }
 }

@@ -111,7 +111,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'getUser?id=' + this.value,            
             dataType : "json",    
-            async: false,                
+            async: true,                
             success: function (data, textStatus) { 
                 $( "input[name='nickname']" ).val(data[0]['nickname'] );
                 $( "input[name='email']" ).val( data[0]['email'] );
@@ -150,7 +150,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'getGroups',            
             dataType : "json",   
-            async: false,                 
+            async: true,                 
             success: function (data, textStatus) { 
                 var html = "";
                 $.each(data, function(i, val) {    
@@ -169,7 +169,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'getUsers',            
             dataType : "json", 
-            async: false,                   
+            async: true,                   
             success: function (data, textStatus) { 
                 var html = "";
                 $.each(data, function(i, val) {    
@@ -194,7 +194,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'getDirectories',            
             dataType : "json",    
-            async: false,                
+            async: true,                
             success: function (data, textStatus) { 
                 var html = "";
                 $.each(data, function(i, val) {    
