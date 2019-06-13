@@ -200,7 +200,7 @@ $(document).ready(function(){
                 var style = "";
                 $.each(data, function(i, val) { 
                     style = "style='" + data[i]['style'] + "'";
-                    html += "<option " + style + " value='" + data[i]['id'] +"'>" + data[i]['name'] + "</option>";
+                    html += "<option " + (i == 0 ? 'selected ' : '') + style + " value='" + data[i]['id'] +"'>" + data[i]['name'] + "</option>";
                 });
                 $(".usergroup").html(html);
                 html +="<option value='0'>New ... </option>";
@@ -228,7 +228,7 @@ $(document).ready(function(){
                 $.each(data, function(i, val) {    
                     img = "style='background-image:url("+ data[i]['avatar'] + "); padding-left:20px;  background-size: 17px; background-repeat: no-repeat;" + data[i]['style'] + ";'";
                     //option#star1 { background-image:url(star.png); padding-left:15px; }
-                    html += "<option " + img + " value='" + data[i]['id'] +"'>" + data[i]['nickname'] + "</option>";
+                    html += "<option " + (i == 0 ? 'selected ' : '') + img + " value='" + data[i]['id'] +"'>" + data[i]['nickname'] + "</option>";
                 });
                 $(".userslist").html(html); 
                 $( "input[name='nickname']" ).val(data[0]['nickname'] );
