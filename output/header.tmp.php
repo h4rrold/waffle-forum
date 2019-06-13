@@ -76,11 +76,11 @@
                     <div class="menu_drop__logo_drop"><img src="img/logo-fnl-white.png" alt="" class="logo_drop">
                     </div>
                     <ul class="menu_drop">
-                        <li class="menu__item_drop"><a href="{{ROUTE_PATH}}" class="menu__link_drop">Головна</a>
+                        <li class="menu__item_drop"><a href="{{ROUTE_PATH}}/" class="menu__link_drop">Головна</a>
                         </li>
-                        <li class="menu__item_drop"><a href="#" class="menu__link_drop">Про нас</a></li>
-                        <li class="menu__item_drop"><a href="#" class="menu__link_drop">Блог</a></li>
-                        <li class="menu__item_drop"><a href="#" class="menu__link_drop">Завантаження</a></li>
+                        <li class="menu__item_drop"><a href="https://github.com/h4rrold/waffle-forum/blob/master/README.md" class="menu__link_drop">Про нас</a></li>
+                        <li class="menu__item_drop"><a href="https://github.com/h4rrold/waffle-forum/commits/master" class="menu__link_drop">Блог</a></li>
+                        <li class="menu__item_drop"><a href="https://github.com/h4rrold/waffle-forum" class="menu__link_drop">Завантаження</a></li>
                         <li class="menu__item_drop "><a href="{{ROUTE_PATH}}/community/home"
                                                         class="menu__link_drop menu__link_active_drop">Спільнота</a>
                         </li>
@@ -91,10 +91,10 @@
         </div>
         <div class="header__nav">
             <ul class="nav__menu">
-                <li class="menu__item"><a href="{{ROUTE_PATH}}" class="menu__link">Головна</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Про нас</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Блог</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Завантаження</a></li>
+                <li class="menu__item"><a href="{{ROUTE_PATH}}/" class="menu__link">Головна</a></li>
+                <li class="menu__item"><a href="https://github.com/h4rrold/waffle-forum/blob/master/README.md" class="menu__link">Про нас</a></li>
+                <li class="menu__item"><a href="https://github.com/h4rrold/waffle-forum/commits/master" class="menu__link">Блог</a></li>
+                <li class="menu__item"><a href="https://github.com/h4rrold/waffle-forum" class="menu__link">Завантаження</a></li>
                 <li class="menu__item menu__item_active"><a href="{{ROUTE_PATH}}/community/home"
                                                             class="menu__link">Спільнота</a></li>
             </ul><?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
