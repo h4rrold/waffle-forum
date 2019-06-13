@@ -21,6 +21,7 @@ class DiscussionController extends Controller
         $amount_of_posts = 3;
 
         $amount = $obj->getCountPosts($id_topic);
+        $amount['count'];
 
         if ($id_page > ceil($amount['count'] / $amount_of_posts)) header("Location:/waffle-forum/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/" . ceil($amount['count'] / $amount_of_posts));
         if ($id_page < 1) header("Location:/waffle-forum/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
@@ -42,8 +43,8 @@ class DiscussionController extends Controller
 
         if ($_SESSION['prev'] !== $_SESSION['cur'] && $id_topic != $parts_of_url[count($parts_of_url) - 3]) {
             $obj->incViews($topic['amount_of_views'] + 1, $id_topic);
+            $topic['amount_of_views'] = $topic['amount_of_views'] + 1;
         }
-
         $this->out($topic);
 
     }
@@ -66,10 +67,15 @@ class DiscussionController extends Controller
         if (isset($_POST['send'])) {
             $obj = new Post();
             $post_text = trim(stripslashes(htmlspecialchars($_POST['post_text'])));
-            $obj->Send($id_topic, $post_text);
-            $obj = new Topic();
-            $obj->incPosts($amount_of_posts + 1, $id_topic);
-            header('Location: ' . ROUTE_PATH . "/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
+            if ($post_text !== '') {
+                $obj->Send($id_topic, $post_text);
+                $obj = new Topic();
+                $obj->incPosts($amount_of_posts + 1, $id_topic);
+                header('Location: ' . ROUTE_PATH . "/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
+            } else {
+                header('Location: ' . ROUTE_PATH . "/community/categories/$directory_id/$directory_name/$id_topic/$title_topic/1");
+            }
         }
+
     }
 }

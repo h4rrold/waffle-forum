@@ -19,7 +19,5 @@ require_once 'Core/SQLBuilder.php';
 MyPDO::connect("mysql:host=$server;dbname=$db;charset=utf8", $username, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
 //echo output('header');
 Route::run();
-echo $_SESSION['prev'].'<br><br>';
-echo $_SESSION['cur'].'<br>';
 //echo output('footer');
 return ob_get_contents();

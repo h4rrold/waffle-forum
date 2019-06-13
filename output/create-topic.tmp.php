@@ -1,4 +1,4 @@
-<title>{{$title}} - {{urldecode($directory_name)}}</title>
+<title>{{$title}} - Створити тему</title>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">
@@ -19,7 +19,7 @@
 <div class="container__community-menu">
     <div class="community-menu-block_drop">
         <button class="community-menu__button-drop"><i class="fas fa-chevron-down"></i><span
-                    class="button_drop__text">Forum menu</span></button>
+                class="button_drop__text">Forum menu</span></button>
         <!--<button class="community-menu__button-up_drop"><i class="fas fa-chevron-up"></i><span class="button_drop__text">Forum menu</span>-->
         </button>
         <nav class=" community-menu_drop">
@@ -40,27 +40,41 @@
     <div class="content__page">
         <div class="page">
             <div class="page__page-title">
-                <h2 class="page-title">{{$directory_name}}</h2>
+                <h2 class="page-title">Створити нову тему</h2>
             </div>
-            <div class="page__button-create page__button-create_topic">
-                    <a href='{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/create-topic'class="button-create">Створити тему</a>
-            </div>
-            <div class="page__popular">
-                <div class="popular"><?php
-                    foreach ($topics as $topic) {
-                        echo output('topic', ['directory_id' => $directory_id, 'directory_name' => $directory_name, 'topic_id' => $topic['id'], 'user_avatar' => $topic['avatar'], 'title_topic' => $topic['title'], 'user_name' => $topic['nickname'], 'topic_date' => $topic['datetime'], 'post_amount' => $topic['amount_of_posts'], 'views_amount' => $topic['amount_of_views'], 'topic_text' => $topic['text']]);
-                    } ?></div>
-            </div>
-<!--            <div class="page__topic-amount-display">-->
-<!--                <span class="topic-amount-display">Відображено<span-->
-<!--                        class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>-->
-<!--            </div>-->
-<!--            <div class="page__next-button">-->
-<!--                <form action="{{$page + 1}}" method="post">-->
-<!--                    <input class="next-button" type="submit" value="Наступна">-->
-<!--                </form>-->
+            <div class="page__create-topic">
+
+                <div class="create-topic">
+
+                    <div class="create-topic__create">
+                        <div class="create">
+                            <form action="{{ROUTE_PATH}}/community/categories/{{$id_category}}/{{$category}}/create-topic" method="post">
+                                <div class="create__title-create">
+                                    <div class="title-create__text">Введіть назву вашої теми</div>
+                                    <div class="title-create__text-field">
+                                        <input name="topic_title" type="text" class="text-field">
+                                    </div>
+                                </div>
+                                <div class="create__topic-content-create">
+                                    <div class="topic-content-create">
+                                        <div class="topic-content-create__content-text">Введіть текст вашої теми
+                                        </div>
+                                        <div class="topic-content-create__editor">
+                                            <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="create-topic__button-create">
+
+                                        <input name="send-topic" type="submit" value="Підтвердити" class="button-create">
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
+</div>

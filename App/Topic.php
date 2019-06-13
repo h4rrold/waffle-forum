@@ -11,7 +11,7 @@ class Topic extends Model
     {
         $amount_of_posts = MyPDO::first("SELECT COUNT(posts.id) as count FROM topics, posts WHERE topics.id = posts.topic_id AND topics.id = ?", [$id_topic])['count'];
 
-        MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_posts` = ? WHERE `topics`.`id` = ?", [$amount_of_posts, $id_topic]);
+        MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_posts` = ? WHERE `topics`.`id` = ?", [$amount_of_posts - 1, $id_topic]);
     }
 
     public function getTopTopics($first, $second)
@@ -70,7 +70,7 @@ class Topic extends Model
 
     public function getTopic($id_topic)
     {
-
+        $this->update_counts_of_posts($id_topic);
         $topic = MyPDO::first("SELECT topics.id, users.avatar, topics.title, users.nickname, posts.datetime, topics.amount_of_posts, topics.amount_of_views, posts.text 
                                     FROM users, topics, posts 
                                     WHERE topics.post_id = posts.id  
@@ -79,8 +79,22 @@ class Topic extends Model
                                     AND topics.id = ?", [$id_topic]);
         $date = new DateTime($topic['datetime']);
         $topic['datetime'] = $date->format('j ').$this->monthes[$date->format('n')].$date->format(' Y');
-        $this->update_counts_of_posts($id_topic);
+
+
         return $topic;
+    }
+
+    public function newTopic($topic_title, $directory_id)
+    {
+        MyPDO::insert("INSERT INTO `topics` (`id`, `name`, `directory_id`, `title`, `post_id`, `last_post_id`, `amount_of_posts`, `is_pinned`, `amount_of_views`) 
+                        VALUES (NULL, NULL, ?, ?, '0', '0', '0', '0', '0')", [$directory_id, $topic_title]);
+
+        return MyPDO::first("SELECT id FROM topics ORDER BY id DESC LIMIT 1")['id'];
+    }
+
+    public function updateTopicsPost($post_id, $topic_id)
+    {
+        MyPDO::runWithoutFetch("UPDATE `topics` SET `post_id` = ? WHERE `topics`.`id` = ?",[$post_id, $topic_id]);
     }
 
     public function incViews($amount, $id_topic)
