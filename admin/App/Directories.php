@@ -4,9 +4,22 @@ class Directories extends Model
 {
     public function getAllDirectories()
     {
-        $sql = "SELECT * FROM directories";
+        
+        $sql = "SELECT * FROM directories ORDER BY position";
         $result = MyPDO::run($sql);
         return $result;
+    }
+    public function updateAllDirectories()
+    {
+        $response = [];
+        $data = $_POST['Dirs'] ?? '';
+        foreach ($data as $dir) {
+            $sql = "UPDATE directories SET position = ? WHERE id = ?";
+            MyPDO::runWithoutFetch($sql, [$dir['position'], $dir['id']]);
+            $response[] = [true, "Updated directory with id = " . $dir['id']];
+        }
+        //print_r($_POST);
+        return $response;
     }
 
     public function getDirectoryById($id = null)
