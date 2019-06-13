@@ -409,7 +409,7 @@ button::-moz-focus-inner {
 }
 
 .user-buttons-block_signed {
-    display: inline-block;
+    display: none;
     margin-right: 25px;
 }
 
@@ -602,18 +602,18 @@ button::-moz-focus-inner {
 }
 
 .content {
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .page__page-title {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     padding: 0 30px;
 }
 
 .page-title {
     text-align: center;
-    font-size: 4.166rem;
+    font-size: 3.5rem;
     font-weight: 900;
     color: #2D2929;
 }
@@ -639,10 +639,9 @@ button::-moz-focus-inner {
 }
 
 .popular {
-    max-width: 1364px;
+    max-width: 1340px;
     margin: 0 auto;
     border: 1px solid #707070;
-    padding: 0 75px 50px 75px;
 }
 
 .topic {
@@ -653,8 +652,8 @@ button::-moz-focus-inner {
 
 .user-avatar {
     display: inline-block;
-    /*display: block;*/
-    /*bottom: -80px;*/
+    display: block;
+    bottom: -80px;
 }
 
 .user-avatar img {
@@ -668,6 +667,7 @@ button::-moz-focus-inner {
     color: #2D2929;
     font-size: 1.666rem;
     word-break: break-word;
+    cursor: pointer;
 }
 
 .title-topic:hover {
@@ -691,7 +691,7 @@ button::-moz-focus-inner {
 }
 
 .topic__topic-content {
-    width: 80%;
+    /* width: 80%; */
     padding-left: 28px;
 }
 
@@ -821,8 +821,8 @@ button::-moz-focus-inner {
     outline: 0;
 }
 .page__button-create{
-   
-margin: 0 auto;
+
+    margin: 0 auto;
 }
 .page__button-create_topic{
     max-width: 1340px;
@@ -1785,7 +1785,7 @@ margin: 0 auto;
 
 .card-stat {
     color: inherit;
-    ;
+;
     font-size: 0.9rem;
 }
 
@@ -1813,19 +1813,21 @@ margin: 0 auto;
 
 .user-info-block {
 
-max-width: 1340px;
+    max-width: 1340px;
 
-border: 1px solid #707070;
+    border: 1px solid #707070;
 
-margin: 0 auto;
+    margin: 0 auto;
 
-position: relative;
+    position: relative;
 
-padding: 40px 30px;
+    padding: 40px 30px;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#87effd+0,05c7e1+100 */
 }
 
-.page__user-info-block {}
+.page__user-info-block {
+    margin: 0 auto;
+}
 
 .user-info-block__user-avatar .user-avatar img {
     width: 160px;
@@ -1843,6 +1845,8 @@ padding: 40px 30px;
     width: 80%;
 
     display: inline-block;
+
+    vertical-align: top;
 }
 
 .user-info-main {
@@ -1853,8 +1857,6 @@ padding: 40px 30px;
 }
 
 .user-info-main__username-info {
-
-    margin-bottom: 5px;
 }
 
 .username-info {
@@ -1865,7 +1867,7 @@ padding: 40px 30px;
 
 .user-info-main__email-info {
 
-    margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .email-info {
@@ -1874,7 +1876,9 @@ padding: 40px 30px;
     color: #2D2929;
 }
 
-.user-info-main__group-info {}
+.user-info-main__group-info {
+    margin-top: 10px;
+}
 
 .group-info-text {
     font-size: 1.3rem;
@@ -1888,20 +1892,38 @@ padding: 40px 30px;
     color: #17828E;
 }
 
-.user-info-main__date-reg-info {}
+.user-info-main__date-reg-info {
+    margin-top: 10px;
+}
 
 .date-reg-info {
     color: #17828E;
     font-size: 1.3rem;
 }
+.email-info__text{
+    font-size: 1.3rem;
+    color: #2D2929;
+    margin-right: 5px;
 
+}
+.user-info-main__email-info{
+
+}
+.email-info{
+    font-size: 1.3rem;
+    color: #2D2929;
+    margin-right: 5px;
+
+}
 .date-reg-info__text {
     font-size: 1.3rem;
     color: #2D2929;
     margin-right: 5px;
 }
 
-.user-info-main__bio-info {}
+.user-info-main__bio-info {
+    margin-top: 10px;
+}
 
 .date-reg-info {}
 
@@ -1910,7 +1932,9 @@ padding: 40px 30px;
     font-size: 1.3rem;
 }
 
-.user-info-main__change-bio {}
+.user-info-main__change-bio {
+    margin-top: 20px;
+}
 
 .change-bio-button {
     display: inline;
@@ -1930,7 +1954,7 @@ padding: 40px 30px;
 }
 
 .change-bio {}
-.change-bio__button{
+/* .change-bio__button{
     display: inline;
     cursor: pointer;
     font-size: 1rem;
@@ -1940,6 +1964,18 @@ padding: 40px 30px;
     border: 1px solid #707070;
     border-radius: 44px;
     outline: 0;
+} */
+.change-button{
+    display: inline;
+    cursor: pointer;
+    font-size: 1rem;
+    background: #17828E;
+    padding: 8px 12px;
+    color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 44px;
+    outline: 0;
+    margin-left: 10px;
 }
 .change-bio-button_cancel{
     display: none;
@@ -1952,18 +1988,20 @@ padding: 40px 30px;
     outline: 0;
 }
 .change-bio__textarea {
-    border: 1px solid #707070;
+    border: 1px solid #17828E;
+    border-radius: 4px;
+    width: 40%;
 }
 
 .page__user-info-rating {
     margin-top: 50px;
+    border: 1px solid #707070;
+    max-width: 1340px;
+    margin: 50px auto 0;
+    padding: 40px 30px;
 }
 
 .user-info-rating {
-    max-width: 1340px;
-    border: 1px solid #707070;
-    margin: 0 auto;
-    padding: 40px 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -1984,6 +2022,104 @@ padding: 40px 30px;
     font-size: 1.7rem;
     font-weight: 900;
 }
+input[type="file"] {
+    display: none;
+}
+.user-avatar__avatar-edit{
+    margin-top: 10px;
+}
+.avatar-edit{
+    text-align: center;
+}
+.custom-file-upload {
+    border: 1px solid #707070;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #17828E;
+}
+.edit-info__edit-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.edit-button,.edit-button_cancel{
+    font-size: 1.2rem;
+}
+.user-info-main__change-email{
+    margin-top: 15px;
+}
+.user-vote{
+    padding: 10px;
+}
+.vote-message__est-topic{
+    margin-left: 5px;
+}
+.est-topic{}
+.est-topic__text{}
+.est-topic__title{
+    cursor: pointer;
+    margin-left: 5px;
+}
+.est-topic__title:hover{
+    text-decoration: underline;
+    color: #17828E;
+}
+.page__user-recent-topics{
+    border: 1px solid #707070;
+    max-width: 1340px;
+    padding: 40px 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.user-recent-topics__title-recent-topics{margin-bottom: 30px;}
+.title-recent-topics{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #17828E;
+}
+.user-recent-topics{
+    border-top: 1px solid #707070;
+    padding: 20px 10px;
+}
+.user-recent-topics__topic{}
+.topic_recent{}
+.topic__user-avatar_recent{}
+.topic__user-avatar_recent .user-avatar img{
+    width: 80px;
+    height: 80px;
+}
+.title-topic_recent{
+    font-size: 1.4rem;
+}
+.topic-content__text-topic_recent{
+    margin-top: 10px;
+}
+.topic__info-stat_recent{
+}
+.text-topic_recent{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.user-recent-topics:last-child{
+    padding-bottom: 0;
+}
+.exit-button{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: #17828E;
+    padding: 10px 18px;
+    color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 44px;
+    outline: 0;
+}
+.page__exit-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 /****************************************************
 *****************************************************
 *********************CREATE TOPIC**********************
@@ -1996,7 +2132,7 @@ padding: 40px 30px;
     margin: 0 auto;
 }
 .create{
- 
+
 }
 .create__title-create{
 
@@ -2016,6 +2152,9 @@ padding: 40px 30px;
     font-size: 1.2rem;
     border-radius: 3px;
 }
+.text-field_small{
+    width: 30%;
+}
 .create__topic-content-create{
     margin-top: 50px;
 }
@@ -2032,6 +2171,65 @@ padding: 40px 30px;
 .topic-content-create__editor{
     margin-top: 20px;
 }
+.users-votes__user-vote{}
+.users-votes{}
+.user-votes__votes-title{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.votes-title{
+    color: #17828E;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.users-votes__user-vote{}
+
+.users-votes__user-vote{
+    border-top: 1px solid #707070;
+}
+.users-votes__user-vote:last-child{
+    border-bottom: 1px solid #707070;
+}
+.user-vote__user-avatar{
+    display: inline-block;
+    bottom: 0px;
+}
+.user-vote__user-avatar .user-avatar{
+    display: inline-block;
+    bottom: 0;
+}
+.user-vote__user-avatar .user-avatar img{
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+}
+.user-vote__vote-message{
+    display: inline-block;
+    margin-left: 10px;
+    width: 80%;
+}
+.vote-message{
+    display: inline-block;
+    font-size: 1.2rem;
+}
+.vote-message__username{}
+.vote-message__text{}
+.vote-message__est{
+    margin-left: 10px;
+    color: #17828E;
+}
+
+
+/****************************************************
+*****************************************************
+*********************profile**********************
+****************************************************
+***************************************************/
+.username-profile{}
+.page-title__username-profile{}
+
+
 /****************************************************
 *****************************************************
 *********************MEDIA QUERIES******************
@@ -2087,7 +2285,7 @@ padding: 40px 30px;
         right: -1px;
         top: 0px;
         left: -63px;
-         padding: 0 30px;
+        padding: 0 30px;
     }
 
     .header__nav {
@@ -2154,9 +2352,27 @@ padding: 40px 30px;
     .page__editor {
         max-width: 998px;
     }
-    
+
     .page__button-create_topic{
         max-width: 998px;
+    }
+    /*******Persinal-page****/
+    .page__user-info-block{
+        max-width: 998px;
+    }
+    .page__user-info-rating{
+        max-width: 998px;
+    }
+    .user-info-rating__users-votes{
+        max-width: 998px;
+    }
+    .page__user-recent-topics{
+        max-width: 998px;
+    }
+    .user-vote__user-avatar .user-avatar img{
+        width: 50px;
+        height: 50px;
+        vertical-align: baseline;
     }
 }
 
@@ -2243,9 +2459,39 @@ padding: 40px 30px;
     .page__editor {
         max-width: 740px;
     }
-    
+
     .page__button-create_topic{
         max-width: 740px;
+    }
+    /*******Persinal-page****/
+    .user-info-main__username-info{
+        margin-top: 15px;
+        text-align: center;
+    }
+    .user-info-block__user-info-main{
+        width:100%;
+    }
+    .user-avatar__avatar-edit{
+        text-align: center;
+    }
+    .user-info-block__user-avatar{
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+    }
+    .page__user-info-block{
+        max-width: 740px;
+    }
+    .page__user-info-rating{
+        max-width: 740px;
+    }
+    .user-info-rating__users-votes{
+        max-width: 740px;
+    }
+    .page__user-recent-topics{
+        max-width: 740px;
+    }
+    .username-info{
     }
 }
 
@@ -2397,13 +2643,33 @@ padding: 40px 30px;
     .page__create-topic{
         max-width: 608px;
     }
-    
+
     .page__button-create_topic{
         max-width: 608px;
     }
     .button-create{
         padding: 10px 20px;
         font-size: 1rem;
+    }
+
+    .text-field_small{
+        width: 45%;
+    }
+    .change-bio__textarea{
+        width: 70%;
+    }
+
+    .page__user-info-block{
+        max-width: 608px;
+    }
+    .page__user-info-rating{
+        max-width: 608px;
+    }
+    .user-info-rating__users-votes{
+        max-width: 608px;
+    }
+    .page__user-recent-topics{
+        max-width: 608px;
     }
 }
 
@@ -2554,6 +2820,18 @@ padding: 40px 30px;
         padding: 8px 16px;
         font-size: 1rem;
     }
+    .page__user-info-block{
+        max-width: 460px;
+    }
+    .page__user-info-rating{
+        max-width: 460px;
+    }
+    .user-info-rating__users-votes{
+        max-width: 460px;
+    }
+    .page__user-recent-topics{
+        max-width: 460px;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -2619,7 +2897,6 @@ padding: 40px 30px;
 
     .user-avatar {
         display: inline-block;
-
     }
 
     .user-avatar img {
@@ -2813,8 +3090,40 @@ padding: 40px 30px;
     .page__create-topic{
         max-width: 348px;
     }
-    
+
     .page__button-create_topic{
         max-width: 348px;
+    }
+
+
+    .user-info-rating{
+        flex-direction: column;
+    }
+    .user-info-rating__rating-item{
+        margin-top: 20px;
+    }
+    .user-info-rating__rating-item:first-child{
+        margin-top: 0;
+    }
+    .text-field_small{
+        width: 65%;
+    }
+    .change-bio__textarea{
+        width: 60%;
+    }
+    .page__user-info-block{
+        max-width: 348px;
+    }
+    .page__user-info-rating{
+        max-width: 348px;
+    }
+    .user-info-rating__users-votes{
+        max-width: 348px;
+    }
+    .page__user-recent-topics{
+        max-width: 348px;
+    }
+    .user-vote{
+        text-align: center;
     }
 }

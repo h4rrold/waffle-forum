@@ -13,12 +13,12 @@ class RegController extends Controller
     {
         $userModel = new User();
         $email = $_POST['email'];
-        if(!empty($userModel->validEmail($email)))
-        {
-            echo(json_encode(['res' => false]));
-        }
-        else echo(json_encode(['res' => true]));
-        return;
+        echo $userModel->validEmail($email)['result'];
+    }
+    public function nickExists() {
+        $userModel = new User();
+        $nick = $_POST['nick'];
+        echo $userModel->validNickname($nick)['result'];
     }
     public function registration()
     {

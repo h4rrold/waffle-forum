@@ -14,12 +14,12 @@
                                     <div class="reg-form__input-item">
                                             <div class="input-item__text">Email</div>
                                             <input type="email" name="email" class="input-item">
-                                        <!--навешен display для first-child--><div class="input-item__text-error" id="email" style="display: none;">Пользователь с таким E-Mail существует</div>
+                                        <!--навешен display для first-child--><div class="input-item__text-error" id="email" style="display: none;">Користувач з таким E-Mail існує</div>
                                         </div>
                                 <div class="reg-form__input-item">
                                    <div class="input-item__text">Нік</div>
                                     <input type="text" minlength="3" name="nick-in" class="input-item">
-                                    <div class="input-item__text-error">Текст помилки буде тут</div>
+                                    <div class="input-item__text-error">Користувач з таким ніком існує</div>
                                 </div>
                                 <div class="reg-form__input-item">
                                     <div class="input-item__text">Пароль</div>
@@ -29,12 +29,11 @@
                                 <div class="reg-form__input-item">
                                     <div class="input-item__text">Повторіть пароль</div>
                                     <input type="password" minlength="8" name="pas-in2" class="input-item">
-                                    <div class="input-item__text-error">Текст помилки буде тут</div>                                           
+                                    <div class="input-item__text-error">Паролі не збігаються</div>
                                 </div>
                                 <div class="reg-form__button-create">
                                     <input type="submit" value="Створити акаунт" class="button-create" name="send">
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
