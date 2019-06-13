@@ -72,6 +72,19 @@ class Topic extends Model
         return $topic;
     }
 
+    public function getTopicsBySeek($seek_string) {
+        $topics = MyPDO::run("SELECT topics.id, users.avatar, topics.title, users.nickname, posts.datetime, topics.amount_of_posts, topics.amount_of_views, posts.text, topics.directory_id, directories.name 
+                              FROM users, topics, posts, directories 
+                              WHERE topics.title LIKE ? 
+                              AND users.id = posts.user_id 
+                              AND topics.id = posts.topic_id
+                              AND directories.id = topics.directory_id
+                              GROUP BY topics.id 
+                              ORDER BY topics.amount_of_views 
+                              DESC",["%$seek_string%"]);
+        return $topics;
+    }
+
     public function incViews($amount, $id_topic)
     {
         MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_views` = ? WHERE `topics`.`id` = ?", [$amount, $id_topic]);
@@ -81,4 +94,5 @@ class Topic extends Model
     {
         MyPDO::runWithoutFetch("UPDATE `topics` SET `amount_of_posts` = ? WHERE `topics`.`id` = ?", [$amount, $id_topic]);
     }
+
 }

@@ -1,6 +1,5 @@
-
 $(document).ready(function () {
-    
+
     $(".button__burger").click(function () {
         $('.button__cross').css('pointer-events', 'none');
         $(".nav__menu_drop").slideToggle("slow", function () {
@@ -21,6 +20,13 @@ $(document).ready(function () {
             $(this).css('pointer-events', 'auto');
         });
     });
+
+    $('.search').children().on('submit', function(e) {
+        e.preventDefault();
+        let seek_string = $(this).children('input').val();
+        window.location = '/waffle-forum/community/seek/'+seek_string;
+    });
+
 
 
     $(".community-menu__button-drop").click(function () {
@@ -54,7 +60,7 @@ $(document).ready(function () {
             },
             dataType: 'Text',
             method: 'POST',
-            success: function(data) {
+            success: function (data) {
                 $(container).children(".rate-post_result").slideToggle(200);
                 $(container).children('.rate-post').hide();
                 $(container).children('.rate-post_result').css('display', 'flex');
@@ -71,12 +77,12 @@ $(document).ready(function () {
         });
     });
     /*WusiBb init */
-    
+
     var wbbOpt = {
         buttons: "bold,italic,underline,|,img,link,|,code,quote"
-        }
-    $(function() {
+    };
+    $(function () {
         $("#editor").wysibb(wbbOpt);
-      })
-      
+    });
+
 });

@@ -8,6 +8,7 @@ Route::get('community/categories/{id_category}/{category}', 'TopicsController@ge
 Route::get('community/categories', 'CategoriesController@getCategories');
 Route::get('community/home', 'HomeController@out');
 Route::get('community/recent', 'RecentTopicsController@out');
+Route::get('community/seek/{seek_string}', 'Seek_topicsController@getSeekResult');
 Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');
 Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController@getVotedPosts');
 
