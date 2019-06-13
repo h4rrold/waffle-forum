@@ -12,9 +12,9 @@ $(document).ready(function () {
     });
 
     $(".button__cross").click(function () {
-        $(this).css('pointer-events', 'none');
+        $(this).css('pointer-events', 'none')
+        $(".block-users-buttons").hide();
         $(".nav__menu_drop").slideToggle("slow", function () {
-            $(".block-users-buttons").hide();
             $(".button__cross").hide();
             $(".button__burger").show();
             $(this).css('pointer-events', 'auto');
@@ -65,6 +65,11 @@ $(document).ready(function () {
                 $(container).children('.rate-post').hide();
                 $(container).children('.rate-post_result').css('display', 'flex');
                 $(container).find('.rate-post__text_result').html(data);
+                if(inc === 1){
+                    $(container).find('.stat-post__positive').html(+$(container).find('.stat-post__positive').html() + 1)
+                } else {
+                    $(container).find('.stat-post__negative').html(+$(container).find('.stat-post__negative').html() + 1)
+                }
             }
         })
     });
