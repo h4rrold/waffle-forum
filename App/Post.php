@@ -69,8 +69,9 @@ class Post extends  Model
         $where_id = '';
         if(array_key_exists('logged-user', $_SESSION)){
             $where_id .= ' WHERE user_id = '.$_SESSION['logged-user']['id'];
+            return MyPDO::run("SELECT post_id FROM votes $where_id");
         }
-        return MyPDO::run("SELECT post_id FROM votes $where_id");
+        return MyPDO::run('SELECT id as post_id FROM posts');
     }
 
     public function Send($id_topic, $post_text)
@@ -79,5 +80,4 @@ class Post extends  Model
          MyPDO::insert("INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `text`) VALUES (NULL, ?, ?, ?)", [$_SESSION['logged-user']['id'], $id_topic, $post_text]);
          return MyPDO::first("SELECT id FROM posts ORDER BY id DESC LIMIT 1")['id'];
     }
-
 }

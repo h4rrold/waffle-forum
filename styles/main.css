@@ -313,7 +313,10 @@ button::-moz-focus-inner {
 .sign-in-button-text {
     color: #ffffff;
 }
-
+.sign-in-button-text:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
 .nav__registration-button {
     display: inline-block;
     margin-right: 28px;
@@ -2856,7 +2859,10 @@ input[type="file"] {
         color: #ffffff;
         font-size: 0.9rem;
     }
-
+    .sign-in-button-text:hover{
+        color: #ffffff;
+        text-decoration: underline;
+    }
     .sign-in-button_drop i {}
 
     .nav__search-button_drop {
