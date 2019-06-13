@@ -20,7 +20,7 @@
     <div class="header__content">
         <div class="header__logo">
 
-            <a href="#" class="logo-link"><img src="{{ROUTE_PATH}}/img/logo-fnl-white.png" class="logo"
+            <a href="{{ROUTE_PATH}}/community/home" class="logo-link"><img src="{{ROUTE_PATH}}/img/logo-fnl-white.png" class="logo"
                                                alt="Лого Waffle forum"></a>
         </div>
         <div class="header__nav_drop">
