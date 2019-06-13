@@ -25,7 +25,7 @@
                             </div>
                             <div class="user-info-main__email-info">
                                 <span class="email-info__text">Email:</span>
-                                <span class="email-info">{{$name}}</span>
+                                <span class="email-info">{{$email}}</span>
                             </div>
 
                             <div class="user-info-main__date-reg-info">
