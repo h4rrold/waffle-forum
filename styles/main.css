@@ -1013,7 +1013,7 @@ button::-moz-focus-inner {
 }
 
 .category-content__category-description {
-    display: none;
+    display: block;
     word-break: break-word;
     margin-top: 40px;
 }
