@@ -14,4 +14,6 @@ class TopicsController extends Controller
         $topics = $obj->getFetchTopics($id_category);
         $this->out( ['topics' => $topics, 'directory_id' => $id_category, 'directory_name'=> $category]);
     }
+
+
 }

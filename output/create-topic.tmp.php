@@ -1,4 +1,4 @@
-<title>{{$title}} - Домашня</title>
+<title>{{$title}} - Створити тему</title>
 <div class="start-main">
     <div class="container">
         <div class="container__main-text">
@@ -40,37 +40,36 @@
     <div class="content__page">
         <div class="page">
             <div class="page__page-title">
-                <h2 class="page-title">Цікаві теми</h2>
+                <h2 class="page-title">Створити нову тему</h2>
             </div>
-            <div class="page__popular">
-                <div class="popular"><?php
-                    foreach ($topics as $topic) {
-                        echo output('topic', ['directory_id' => $topic['directory_id'], 'directory_name' => $topic['name'], 'topic_id' => $topic['id'], 'user_avatar' => $topic['avatar'], 'title_topic' => $topic['title'], 'user_name' => $topic['nickname'], 'topic_date' => $topic['datetime'], 'post_amount' => $topic['amount_of_posts'], 'views_amount' => $topic['amount_of_views'], 'topic_text' => $topic['text']]);
-                    } ?>
-                </div>
-            </div>
+            <div class="page__create-topic">
 
-            <div class="page__more-popular-button">
-                <a href="{{ROUTE_PATH}}/community/popular-topics/1"><button formmethod="post" formaction="{{ROUTE_PATH}}/community/popular-topics/1" class="more-popular-button">Більше популярних</button></a>
-            </div>
-            <div class="page__categories-home">
-                <div class="categories-home">
-                    <div class="categories-home__categories-home-title">
-                        <div class="categories-home-title">Обери розділ</div>
-                    </div>
-                    <div class="categories-home__categories-cards">
-                        <div class="categories-cards">
-                            <?php foreach ($categories as $category)
-                                echo output('category2', ['id_topic' => $category['id_topic'],
-                                    'imgs' => $imgs[$category['id'] - 1],
-                                    'id' => $category['id'],
-                                    'name' => $category['name'],
-                                    'topic_last_title' => $category['title'],
-                                    'last_post_date' => $category['MaxDate'],
-                                    'nickname' => $category['nickname'],
-                                    'amount_of_topics' => $category['amount_of_topics'],
-                                    'amount_of_posts' => $category['amount_of_posts']]);
-                            ?>
+                <div class="create-topic">
+
+                    <div class="create-topic__create">
+                        <div class="create">
+                            <form action="{{ROUTE_PATH}}/community/categories/{{$id_category}}/{{$category}}/create-topic" method="post">
+                                <div class="create__title-create">
+                                    <div class="title-create__text">Введіть назву вашої теми</div>
+                                    <div class="title-create__text-field">
+                                        <input name="topic_title" type="text" class="text-field">
+                                    </div>
+                                </div>
+                                <div class="create__topic-content-create">
+                                    <div class="topic-content-create">
+                                        <div class="topic-content-create__content-text">Введіть текст вашої теми
+                                        </div>
+                                        <div class="topic-content-create__editor">
+                                            <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="create-topic__button-create">
+
+                                        <input name="send-topic" type="submit" value="Підтвердити" class="button-create">
+
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

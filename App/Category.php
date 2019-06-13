@@ -13,7 +13,7 @@ class Category extends Model
             $date = new DateTime($categories[$i]['MaxDate']);
             $categories[$i]['MaxDate'] = $date->format('j ').$this->monthes[$date->format('n')].$date->format(' Y');
             $categories[$i]['amount_of_topics'] = MyPDO::first("SELECT COUNT(topics.id) as count FROM topics, directories WHERE topics.directory_id = directories.id AND directories.id = ?", [$categories[$i]['id']])['count'];
-            $categories[$i]['amount_of_posts'] = MyPDO::first("SELECT COUNT(posts.id) as count FROM posts, topics, directories WHERE topics.directory_id = directories.id AND posts.topic_id = topics.id AND directories.id = ?", [$categories[$i]['id']])['count'];
+            $categories[$i]['amount_of_posts'] = MyPDO::first("SELECT COUNT(posts.id) as count FROM posts, topics, directories WHERE topics.directory_id = directories.id AND posts.topic_id = topics.id AND directories.id = ? AND topics.post_id != posts.id", [$categories[$i]['id']])['count'];
             MyPDO::runWithoutFetch("UPDATE `directories` SET `amount_of_posts` = ? WHERE `directories`.`id` = ?", [$categories[$i]['amount_of_posts'], $categories[$i]['id']]);
             MyPDO::runWithoutFetch("UPDATE `directories` SET `amount_of_topics` = ? WHERE `directories`.`id` = ?", [$categories[$i]['amount_of_topics'], $categories[$i]['id']]);
         }

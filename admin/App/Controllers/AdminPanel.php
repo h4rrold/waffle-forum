@@ -41,7 +41,7 @@ class AdminPanel extends Controller
     public function saveDirectories()
     {
         $directories = new Directories();
-        echo(json_encode($directories->updateDirectoryById()));
+        echo(json_encode($directories->updateAllDirectories()));
     }
 
     //users

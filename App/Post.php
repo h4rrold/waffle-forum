@@ -17,7 +17,8 @@ class Post extends  Model
         FROM posts 
         LEFT JOIN users ON posts.user_id = users.id
         LEFT JOIN votes ON posts.id = votes.post_id 
-        WHERE users.id = posts.user_id AND posts.topic_id = ?
+        LEFT JOIN topics ON topics.id = posts.topic_id
+        WHERE users.id = posts.user_id AND posts.topic_id = ? AND posts.id != topics.post_id
         GROUP BY posts.id 
         ORDER BY posts.datetime DESC 
         LIMIT $first, $second", [$id_topic]);
@@ -73,6 +74,9 @@ class Post extends  Model
 
     public function Send($id_topic, $post_text)
     {
-        return MyPDO::insert("INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `text`) VALUES (NULL, ?, ?, ?)", [$_SESSION['logged-user']['id'], $id_topic, $post_text]);
+        $post_text = print_page($post_text);
+         MyPDO::insert("INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `text`) VALUES (NULL, ?, ?, ?)", [$_SESSION['logged-user']['id'], $id_topic, $post_text]);
+         return MyPDO::first("SELECT id FROM posts ORDER BY id DESC LIMIT 1")['id'];
     }
+
 }

@@ -56,7 +56,7 @@
         <div class="content__page">
             <div class="page">
                 <div class="page__discussion-path">
-                    <span class="page__discussion-path__text">Категорії<i class="fas fa-chevron-right"></i>{{$directory_name}}</span>
+                    <span class="page__discussion-path__text"><a href="{{ROUTE_PATH}}/community/categories">Категорії</a><i class="fas fa-chevron-right"></i><a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}">{{$directory_name}}</a></span>
                 </div>
                 <div class="pagе__discussion">
                     <div class="discussion">
@@ -99,24 +99,30 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/sending" method="post">
-                <div class="page__editor">
-                    <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
-                </div>
+
+
                         <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
-                            <div class="page__send-post-button">
+                            <form action="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$amount_of_posts}}/sending" method="post">
+                                <div class="page__editor">
+                                    <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                                </div>
+                                <div class="page__send-post-button">
 
                                     <input type="submit" name="send" class="send-post-button" value="Відправити">
 
                             </div>
                         </form>
                         <?php else:?>
-                            <div class="page__sign-in-proposition-button">
-                                </form>
+
+
                                 <form action="{{ROUTE_PATH}}/login" method="post">
+                                    <div class="page__editor">
+                                        <textarea name="post_text" id="editor" class="" rows="10" cols="10" style="resize: none" ></textarea>
+                                    </div>
+                                    <div class="page__sign-in-proposition-button">
                                     <input type="submit" class="sign-in-proposition-button" value="Увійти, щоб залишити коментар">
-                                </form>
                             </div>
+                            </form>
                         <?php endif;?>
 
                     <?php
@@ -128,7 +134,7 @@
                 </div>
                 <div class="page__topic-amount-display">
                 <span class="topic-amount-display">Відображено<span
-                            class="topic-amount-display__text">{{$first}}-{{$second}}</span>тем</span>
+                            class="topic-amount-display__text">{{$first}}-{{$second}}</span>коментарів</span>
                 </div>
                 <div class="page__post-page-nav">
                     <div class="post-page-nav">

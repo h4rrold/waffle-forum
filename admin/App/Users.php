@@ -4,7 +4,7 @@ class Users extends Model
 {
     public function getAllUsers()
     {
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT users.*, groups.style FROM users LEFT JOIN groups on groups.id = users.group_id";
         $result = MyPDO::run($sql);
         return $result;
     }
@@ -89,7 +89,14 @@ class Users extends Model
             {
                 $sql .= "$key = ?, ";
                 if($key != "pass") $params[] = $value;
-                else $params[] = password_hash($value, PASSWORD_DEFAULT);
+                else 
+                {
+                    $bytes = random_bytes(5);
+                    $salt = bin2hex($bytes);
+                    $params[] = password_hash($value . $salt, PASSWORD_DEFAULT);
+                    $sql .= "salt = ?, ";
+                    $params[] = $salt;
+                }
             }
         }
         $params[] = $id;

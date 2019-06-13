@@ -19,6 +19,7 @@
   })(jQuery);
 $(document).ready(function(){
     //load by id
+    
     $('.directorieslist').on('change', function(){
         if(this.value == '0')
         {
@@ -38,6 +39,35 @@ $(document).ready(function(){
             });
         }
     });
+    $('#saveDirectories').on("click", function(){
+        var i =1;
+        var array = [];
+        $(this).parent().find('.tile').each(function()
+        {
+            //array['id' + $(this).attr('value')] = i++;
+           array.push({id: $(this).attr('value'), position: i++});
+        });
+        console.log(typeof(JSON.stringify({Dirs : array})));
+        $.ajax({
+            type: 'post',
+            url: 'saveDirectories',               
+            async: true,  
+            data: { Dirs : array }, 
+            contentType: "application/x-www-form-urlencoded",             
+            success: function (res) { 
+                var result = jQuery.parseJSON(res);
+                var html = '';
+                $("#adminModal").modal({backdrop: true});
+                for(var i in result)
+                {
+                    var state = result[i][0] ? "<i class='fas fa-check' style='color: green;'></i>  " : "<i class='fas fa-times'></i>   ";
+                    html +="<p id='ajaxResponse'>"+ state + result[i][1] + "</p>";
+                }
+                $('.modal-body').html(html);
+                getDirectories();
+            }               
+        });
+    });
     $('form').each(function(){
 
         $(this).submit(function(e){
@@ -45,6 +75,7 @@ $(document).ready(function(){
             $("#adminModal").modal({backdrop: true});
             $('.modal-body').html("Sending request.");
             let form = $(this);
+            console.log(new FormData(this));
             $.ajax({
                 url: form.attr('action'),
                 type: 'post',
@@ -54,6 +85,7 @@ $(document).ready(function(){
                 contentType: false,
                 data: new FormData(this),
                 success: function(data) {
+                            
                             var result = jQuery.parseJSON(data);
                             var html = '';
                             $("#adminModal").modal({backdrop: true});
@@ -69,6 +101,7 @@ $(document).ready(function(){
                             switch(form.attr('action'))
                             {
                                 case 'saveUsers':
+                                    getUsers();
                                     $('.userslist').trigger('change');
                                     break;
                                 case 'saveGroups':
@@ -86,7 +119,18 @@ $(document).ready(function(){
             });
         });
     });
+    $(function () {
+        $(".grid").sortable({
+            tolerance: 'pointer',
+            revert: 50,
+            placeholder: 'span2 well placeholder tile',
+            forceHelperSize: true
+            
+        });
+    });
+    
     $('.groupslist').on('change', function(){
+        if(this.value == '') return;
         if(this.value == '0')
         {
             $( "input[name='groupname']" ).val('');
@@ -99,7 +143,7 @@ $(document).ready(function(){
                 dataType : "json",    
                 async: false,                
                 success: function (data, textStatus) { 
-                    console.log(data);
+                    //console.log(data);
                     $( "input[name='groupname']" ).val(data[0]['name'] );
                     $( "textarea[name='groupstyle']" ).val( data[0]['style'] );
                 }               
@@ -111,7 +155,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'getUser?id=' + this.value,            
             dataType : "json",    
-            async: false,                
+            async: true,                
             success: function (data, textStatus) { 
                 $( "input[name='nickname']" ).val(data[0]['nickname'] );
                 $( "input[name='email']" ).val( data[0]['email'] );
@@ -150,11 +194,13 @@ $(document).ready(function(){
         $.ajax({
             url: 'getGroups',            
             dataType : "json",   
-            async: false,                 
+            async: true,                 
             success: function (data, textStatus) { 
                 var html = "";
-                $.each(data, function(i, val) {    
-                    html += "<option value='" + data[i]['id'] +"'>" + data[i]['name'] + "</option>";
+                var style = "";
+                $.each(data, function(i, val) { 
+                    style = "style='" + data[i]['style'] + "'";
+                    html += "<option " + style + " value='" + data[i]['id'] +"'>" + data[i]['name'] + "</option>";
                 });
                 $(".usergroup").html(html);
                 html +="<option value='0'>New ... </option>";
@@ -164,16 +210,25 @@ $(document).ready(function(){
             }               
         });
     }
+    $("#filter-userslist").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#usersel *").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     function getUsers() 
     {
         $.ajax({
             url: 'getUsers',            
             dataType : "json", 
-            async: false,                   
+            async: true,                   
             success: function (data, textStatus) { 
                 var html = "";
+                var img = "";
                 $.each(data, function(i, val) {    
-                    html += "<option value='" + data[i]['id'] +"'>" + data[i]['nickname'] + "</option>";
+                    img = "style='background-image:url("+ data[i]['avatar'] + "); padding-left:20px;  background-size: 17px; background-repeat: no-repeat;" + data[i]['style'] + ";'";
+                    //option#star1 { background-image:url(star.png); padding-left:15px; }
+                    html += "<option " + img + " value='" + data[i]['id'] +"'>" + data[i]['nickname'] + "</option>";
                 });
                 $(".userslist").html(html); 
                 $( "input[name='nickname']" ).val(data[0]['nickname'] );
@@ -194,8 +249,16 @@ $(document).ready(function(){
         $.ajax({
             url: 'getDirectories',            
             dataType : "json",    
-            async: false,                
+            async: true,                
             success: function (data, textStatus) { 
+                var html = "";
+                var burgerIcon = "<i class='fas fa-bars'></i>  ";
+                $.each(data, function(i, val){
+                    html+= "<div class='well span2 tile' value='" + data[i]['id'] + "'>" + burgerIcon + data[i]['name'] + "</div>";
+                });
+                $('.dirlist').html(html);
+               // console.log(html);
+                /*
                 var html = "";
                 $.each(data, function(i, val) {    
                     html += "<option value='" + data[i]['id'] +"'>" + data[i]['name'] + "</option>";
@@ -205,6 +268,7 @@ $(document).ready(function(){
                 $(".parentlist").html(html);
                 $( "input[name='directoryname']" ).val(data[0]['name'] );
                 $( "select[name='parent_id']" ).val( data[0]['parent_id'] );
+                */
             }               
         });
     }

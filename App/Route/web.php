@@ -5,8 +5,9 @@ Route::get('community/popular-topics/{page}', 'Popular_topicsController@getPopul
 Route::get('community/categories/{id_category}/{category}/{id_topic}/{topic}/{amount_of_posts}/sending', 'DiscussionController@SendPost');
 Route::get('community/categories/{id_category}/{category}/{id_topic}/{topic}/{id_page}', 'DiscussionController@getTopicAndPosts');
 Route::get('community/categories/{id_category}/{category}', 'TopicsController@getTopics');
+Route::post('community/categories/{id_category}/{category}/create-topic', 'CreateTopicController@createTopic');
 Route::get('community/categories', 'CategoriesController@getCategories');
-Route::get('community/home', 'HomeController@out');
+Route::get('community/home', 'HomeController@getHome');
 Route::get('community/recent', 'RecentTopicsController@out');
 Route::get('community/seek/{seek_string}', 'Seek_topicsController@getSeekResult');
 Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');

@@ -26,9 +26,16 @@ class Login extends Controller
         }
         $auth = new ProcessAuth();
         $res = $auth->validateCredentials($this->username, $this->password, $this->username_err, $this->password_err);
-        $this->username_err = $res[0];
-        $this->password_err = $res[1];
-        $this->draw();
+        if($res[0] == false)
+        {
+            $this->username_err = $res[1];
+            $this->password_err = $res[2];
+            $this->draw();
+        }
+        else 
+        {
+            header('Location: panel');
+        }
     }
     public function logout()
     {

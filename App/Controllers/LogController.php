@@ -5,7 +5,11 @@ class LogController extends Controller
 {
     public function out($params = [])
     {
+
         echo $this->buildPage(output('sign-in', $params));
+        if ($_SESSION['prev'] !== $_SESSION['cur'] && $_SESSION['cur'] !== ROUTE_PATH.'/log' && $_SESSION['prev'] !== ROUTE_PATH.'/reg' && $_SESSION['prev'] !== ROUTE_PATH.'/registration')  {
+            $_SESSION['page_after_log'] = $_SESSION['prev'];
+        }
     }
 
     public function login()
@@ -18,14 +22,17 @@ class LogController extends Controller
             setcookie('nick_email_log', $nick_email);
 
             $user = $obj->nickORemail($nick_email);
-            if (isset($user)) {
+            if (!empty($user)) {
                 if (password_verify($pass.$user['salt'], $user['pass'])) {
                     $obj->last_login($user['id']);
                     $_SESSION['logged-user']['nickname'] = $user['nickname'];
                     $_SESSION['logged-user']['id'] = $user['id'];
                     $_SESSION['logged-user']['avatar'] = $user['avatar'];
                     setcookie('session_id', session_id());
-                    header('Location:'.ROUTE_PATH.'/');
+                    header('Location: '.$_SESSION['page_after_log']);
+                    unset($_SESSION['page_after_log']);
+                    //unset($_SESSION['page_after_reg']);
+                    exit();
                 } else {
                     $errors[] = "Невірний пароль!";
                 }

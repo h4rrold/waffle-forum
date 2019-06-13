@@ -34,7 +34,7 @@ class Route
     public function parse()
     {
         $correct_route = [];
-        $uri = $_GET['route'] ?? substr($_SERVER['REQUEST_URI'],14);
+        $uri = $_GET['route'] ?? '';
 
         $arr_route = explode('/', $uri);
         if($uri == ''){
