@@ -444,7 +444,7 @@ button::-moz-focus-inner {
 
 .start-main {
     max-width: 100%;
-    min-height: 240px;
+    min-height: 255px;
     max-height: 38vh;
     background: url(../img/main-bg.jpg) no-repeat top center;
 }
