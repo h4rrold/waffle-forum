@@ -22,8 +22,9 @@
             <h2 class="main-subtext">дискусії починаються тут</h2>
         </div>
         <div class="container__search">
-            <div class="search">
+            
                 <form action="">
+                <div class="search">
                     <input type="text" name="search__field" id="" class="search__field"
                            placeholder="введіть ваш запит..."></input>
                     <button type="submit" class="search__button clearfix"><i class="fas fa-search"></i></button>
