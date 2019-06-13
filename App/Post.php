@@ -34,7 +34,8 @@ class Post extends  Model
 
     public function getCountPosts($id_topic)
     {
-        return MyPDO::first( "SELECT COUNT(posts.id) as count FROM topics, posts WHERE posts.topic_id = ? AND topics.id = ? GROUP BY topics.id", [$id_topic, $id_topic]);
+
+        return MyPDO::first( "SELECT COUNT(posts.id) as count FROM topics, posts WHERE posts.topic_id = ? AND topics.id = ? AND posts.id != topics.post_id GROUP BY topics.id", [$id_topic, $id_topic])['count'];
     }
 
 

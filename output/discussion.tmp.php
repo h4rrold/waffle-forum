@@ -124,13 +124,13 @@
                             </div>
                             </form>
                         <?php endif;?>
-
-                    <?php
-                    foreach ($posts as $post){
-                        echo output('post', $post);
-                    }
-                    ?>
-                    </div>              
+                        <?php if ($amount != null) : ?>
+                        <?php
+                        foreach ($posts as $post){
+                            echo output('post', $post);
+                        }
+                        ?>
+                    </div>
                 </div>
                 <div class="page__topic-amount-display">
                 <span class="topic-amount-display">Відображено<span
@@ -139,12 +139,12 @@
                 <div class="page__post-page-nav">
                     <div class="post-page-nav">
                         <?php if ($id_page != 1) : ?>
-                        <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/1" class="post-page-nav__item">
-                            <i class="fas fa-angle-double-left"></i>
-                        </a>
-                        <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page - 1}}" class="post-page-nav__item">
+                            <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/1" class="post-page-nav__item">
+                                <i class="fas fa-angle-double-left"></i>
+                            </a>
+                            <a href="{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/{{$id}}/{{$title_topic}}/{{$id_page - 1}}" class="post-page-nav__item">
                                 <i class="fas fa-angle-left"></i>
-                        </a>
+                            </a>
                         <?php endif;?>
                         <?php if ($id_page < $count) : ?>
                             </a>
@@ -157,9 +157,8 @@
                         <?php endif;?>
                     </div>
                 </div>
-                
-                
-                
+                        <?php endif;?>
+            </div></div>
             </div>              
         </div>
     </div>
