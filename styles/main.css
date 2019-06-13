@@ -2128,6 +2128,10 @@ input[type="file"] {
     border-radius: 44px;
     outline: 0;
 }
+.exit-button:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
 .page__exit-button{
     display: flex;
     justify-content: center;
