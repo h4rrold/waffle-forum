@@ -5,7 +5,7 @@ $(document).ready(function () {
     {
         let elem = $(this).siblings('.input-item__text-error');
         $.ajax({
-            url: '/waffle-forum/emailExists',
+            url: '/emailExists',
             data: {
                 email: $(this).val()
             },
@@ -27,7 +27,7 @@ $(document).ready(function () {
     $('input[name=nick-in]').focusout(function() {
         let elem = $(this).siblings('.input-item__text-error');
         $.ajax({
-            url: '/waffle-forum/nickExists',
+            url: '/nickExists',
             data: {
                 nick: $(this).val()
             },
