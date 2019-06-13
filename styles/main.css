@@ -355,7 +355,17 @@ button::-moz-focus-inner {
     color: #ffffff;
     font-size: 0.83rem;
 }
-
+.search-button:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.locale:hover{
+    color:#ffffff;
+}
+.locale__text:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
 .search-button i {
     font-size: 1.111rem;
     vertical-align: bottom;
@@ -409,11 +419,12 @@ button::-moz-focus-inner {
 }
 
 .user-buttons-block_signed {
-    display: none;
+    display: inline-block;
     margin-right: 25px;
 }
 
 .user-buttons-block_signed__user-avatar {
+    display: inline-block;
     margin-right: 10px;
 }
 
@@ -645,8 +656,6 @@ button::-moz-focus-inner {
 }
 
 .topic {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
 
@@ -691,7 +700,7 @@ button::-moz-focus-inner {
 }
 
 .topic__topic-content {
-    /* width: 80%; */
+    width: 80%;
     padding-left: 28px;
 }
 
@@ -1004,6 +1013,7 @@ button::-moz-focus-inner {
 }
 
 .category-content__category-description {
+    display: none;
     word-break: break-word;
     margin-top: 40px;
 }
