@@ -30,7 +30,7 @@
                         <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
                         <div class="user-buttons-block_signed_drop">
                         <span class="user-buttons-block_signed__user-avatar">
-                            <a href="" class="user-avatar user-avatar_header">
+                            <a href="<?=ROUTE_PATH?>/profile" class="user-avatar user-avatar_header">
                                 <img src="{{$_SESSION['logged-user']['avatar']}}">
                             </a>
                         </span>
@@ -100,7 +100,7 @@
             </ul><?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
             <div class="user-buttons-block_signed">
                     <span class="user-buttons-block_signed__user-avatar">
-                        <a href="" class="user-avatar user-avatar_header">
+                        <a href="<?=ROUTE_PATH?>/profile" class="user-avatar user-avatar_header">
                             <img src="{{$_SESSION['logged-user']['avatar']}}">
                         </a>
                     </span>

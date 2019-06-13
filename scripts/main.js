@@ -55,7 +55,6 @@ $(document).ready(function () {
             url: '/waffle-forum/community/categories/increaseRatingByUserVote',
             data: {
                 inc: inc,
-                user_id: user_id,
                 post_id: post_id
             },
             dataType: 'Text',
