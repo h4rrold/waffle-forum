@@ -21,10 +21,10 @@ $(document).ready(function () {
         });
     });
 
-    $('.search').children().on('submit', function(e) {
+    $('.search').parent().on('submit', function(e) {
         e.preventDefault();
-        let seek_string = $(this).children('input').val();
-        window.location = '/waffle-forum/community/seek/'+seek_string;
+        let seek_string = $(this).find('input').val();
+        window.location = '/community/seek/'+seek_string;
     });
 
 
