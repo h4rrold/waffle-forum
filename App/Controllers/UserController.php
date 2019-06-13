@@ -16,6 +16,6 @@ class UserController extends Controller
             unset($_COOKIE['session_id']);
         }
         session_regenerate_id();
-        header('Location: '.ROUTE_PATH . '/');
+        header('Location: '.ROUTE_PATH . '/community/home');
     }
 }
