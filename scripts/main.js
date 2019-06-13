@@ -81,6 +81,7 @@ $(document).ready(function () {
             return $(this).text().substring(0, 75) + (tLength > 75 ? '...' : '');
         });
     });
+
     /*WusiBb init */
 
     var wbbOpt = {
