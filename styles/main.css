@@ -409,7 +409,7 @@ button::-moz-focus-inner {
 }
 
 .user-buttons-block_signed {
-    display: none;
+    display: inline-block;
     margin-right: 25px;
 }
 
@@ -607,7 +607,7 @@ button::-moz-focus-inner {
 }
 
 .page__page-title {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     padding: 0 30px;
 }
 
@@ -639,9 +639,10 @@ button::-moz-focus-inner {
 }
 
 .popular {
-    max-width: 1340px;
+    max-width: 1364px;
     margin: 0 auto;
     border: 1px solid #707070;
+    padding: 0 75px 50px 75px;
 }
 
 .topic {
@@ -652,8 +653,8 @@ button::-moz-focus-inner {
 
 .user-avatar {
     display: inline-block;
-    display: block;
-    bottom: -80px;
+    /*display: block;*/
+    /*bottom: -80px;*/
 }
 
 .user-avatar img {
