@@ -42,9 +42,12 @@
             <div class="page__page-title">
                 <h2 class="page-title">{{$directory_name}}</h2>
             </div>
-            <div class="page__button-create page__button-create_topic">
+            <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
+                <div class="page__button-create page__button-create_topic">
                     <a href='{{ROUTE_PATH}}/community/categories/{{$directory_id}}/{{$directory_name}}/create-topic'class="button-create">Створити тему</a>
-            </div>
+                </div>
+            <?php endif;?>
+
             <div class="page__popular">
                 <div class="popular"><?php
                     foreach ($topics as $topic) {

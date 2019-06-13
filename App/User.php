@@ -27,6 +27,6 @@ class User extends Model
         $date = DateTime::createFromFormat('U', time() + 10800, new DateTimeZone('+02:00'));
         $date = date_format($date, 'Y-m-d H:i:s');
         $ip = $_SERVER['REMOTE_ADDR'];
-        MyPDO::runWithoutFetch("UPDATE `users` SET `last_login` = ?, `last_ip` = ? WHERE `users`.`id` = ?", [$date,$ip, $id_user]);
+        MyPDO::runWithoutFetch("UPDATE `users` SET `last_login` = ? WHERE `users`.`id` = ?", [$date,$ip]);
     }
 }

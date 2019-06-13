@@ -1569,7 +1569,7 @@ button::-moz-focus-inner {
 }
 
 .input-item__text-error {
-    display: block;
+    display: none;
     font-size: 0.8rem;
     color: #e02f48;
     margin-bottom: 5px;
