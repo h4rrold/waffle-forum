@@ -4,6 +4,7 @@
             <div class="page__page-title">
                 <h1 class="page-title">Особистий кабінет
                     <span class="page-title__username-profile"><span class="username-profile">{{$nickname}}</span></span>
+                    <div class="page__exit-button"><a href="{{ROUTE_PATH}}/logout" class="exit-button">Вийти</a></div>
                 </h1>
             </div>
             <div class="page__user-info-block">

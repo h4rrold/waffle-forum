@@ -19,7 +19,7 @@ Route::post('emailExists', 'RegController@emailExists');
 Route::post('nickExists', 'RegController@nickExists');
 //MAIN
 Route::get('cabinet', 'CabinetController@getCabinet');
-Route::get('logout', 'CabinetController@logout');
+Route::get('logout', 'UserController@logout');
 Route::get('registration', 'RegController@out');
 Route::post('reg', 'RegController@registration');
 Route::get('login', 'LogController@out');

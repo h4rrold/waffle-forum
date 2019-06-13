@@ -34,7 +34,7 @@
                                 <img src="{{$_SESSION['logged-user']['avatar']}}">
                             </a>
                         </span>
-                            <a href="{{ROUTE_PATH}}/cabinet" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
+                            <a href="<?=ROUTE_PATH?>/profile" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
                         </div><?php else:?>
                         <div class = "block-users-buttons_unsigned_drop">
                             <div class="nav__sign-in-button_drop">
@@ -106,7 +106,7 @@
                             <img src="{{$_SESSION['logged-user']['avatar']}}">
                         </a>
                     </span>
-                <a href="{{ROUTE_PATH}}/cabinet" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
+                <a href="<?=ROUTE_PATH?>/profile" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
             </div><?php else:?>
             <div class="user-buttons-block_unsigned">
                 <div class="nav__sign-in-button">
