@@ -156,7 +156,8 @@
                     
                     Bio:<br>
                     <textarea rows = "5" cols = "60" name = "bio" style="resize: none;" class="form-control"></textarea><br>
-                    <div class="col-md-6"><input type="submit" value="Update" class="form-control"></div>
+                    <!--<div class="col-md-6"><input type="submit" value="Update" class="form-control"></div>-->
+                    <div class="col-md-6"><button type="submit" class="form-control"><p style="color:green;"><i class="fas fa-check"></i>Update</p></button></div>
                     <div class="col-md-6"><button type="button" class="form-control"><p style="color:red;"> <i class="fas fa-times"></i> Delete</p></button></div>
                     </div>
                 </div>

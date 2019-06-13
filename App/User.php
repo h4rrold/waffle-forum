@@ -63,8 +63,6 @@ class User extends Model
             'id' => $id
         ));
 
-        var_dump($result);
-
         return $result;
     }
 }
