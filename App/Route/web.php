@@ -12,8 +12,7 @@ Route::get('community/recent', 'RecentTopicsController@out');
 Route::get('community/seek/{seek_string}', 'Seek_topicsController@getSeekResult');
 Route::post('community/categories/increaseRatingByUserVote', 'DiscussionController@increaseRatingByUserVote');
 Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController@getVotedPosts');
-Route::post('profile', 'UserController@out');
-
+Route::post('profile', 'UserController@outProfile');
 
 //api calls
 Route::post('emailExists', 'RegController@emailExists');

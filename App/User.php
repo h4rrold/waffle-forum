@@ -31,11 +31,9 @@ class User extends Model
     }
 
     public function loadUserData(){
-        $id = $_SESSION['logged-user']['id'];
+        $id = $id ?? $_SESSION['logged-user']['id'];
 
-        $result = array();
-
-        $result['main_info'] = MyPDO::run("SELECT u.nickname, u.email, u.registration_date, u.bio, g.name, u.rating,
+        $result = MyPDO::first("SELECT u.nickname, u.email, u.registration_date, u.bio, g.name, u.rating, u.avatar,
         COUNT(CASE WHEN v.value = '1' THEN 1 END) as positive,
         COUNT(CASE WHEN v.value = '-1' THEN 1 END) as negative
         FROM users u
@@ -46,7 +44,7 @@ class User extends Model
             'id' => $id
         ));
 
-        $result['other_votes'] = MyPDO::run('SELECT u.nickname, u.avatar , v.value, t.title
+        $result['other_votes'] = MyPDO::run('SELECT u.nickname, u.avatar , v.value, t.title, p.id
         FROM votes v 
         RIGHT JOIN users u ON u.id = v.user_id
         RIGHT JOIN posts p ON p.id = v.post_id
@@ -64,6 +62,8 @@ class User extends Model
         LIMIT 0,5', array(
             'id' => $id
         ));
+
+        var_dump($result);
 
         return $result;
     }
