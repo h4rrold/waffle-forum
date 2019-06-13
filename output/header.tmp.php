@@ -30,11 +30,11 @@
                         <?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
                         <div class="user-buttons-block_signed_drop">
                         <span class="user-buttons-block_signed__user-avatar">
-                            <a href="" class="user-avatar user-avatar_header">
+                            <a href="cabinet" class="user-avatar user-avatar_header">
                                 <img src="{{$_SESSION['logged-user']['avatar']}}">
                             </a>
                         </span>
-                            <a class="username">{{$_SESSION['logged-user']['nickname']}}</a>
+                            <a href="{{ROUTE_PATH}}/cabinet" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
                         </div><?php else:?>
                         <div class = "block-users-buttons_unsigned_drop">
                             <div class="nav__sign-in-button_drop">
@@ -100,11 +100,11 @@
             </ul><?php if (isset($_COOKIE['session_id']) && isset($_SESSION['logged-user']) && ($_COOKIE['session_id'] == session_id())) : ?>
             <div class="user-buttons-block_signed">
                     <span class="user-buttons-block_signed__user-avatar">
-                        <a href="" class="user-avatar user-avatar_header">
+                        <a href="{{ROUTE_PATH}}/cabinet" class="user-avatar user-avatar_header">
                             <img src="{{$_SESSION['logged-user']['avatar']}}">
                         </a>
                     </span>
-                <a class="username">{{$_SESSION['logged-user']['nickname']}}</a>
+                <a href="{{ROUTE_PATH}}/cabinet" class="username">{{$_SESSION['logged-user']['nickname']}}</a>
             </div><?php else:?>
             <div class="user-buttons-block_unsigned">
                 <div class="nav__sign-in-button">

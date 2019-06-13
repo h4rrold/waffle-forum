@@ -27,7 +27,7 @@
             </div>
 
             <div class="category-content__category-description">
-                <div class="category-description__text">Дізнатися як саме використовувати забезпечення Waffle для своїх проектів або поділитися своїм досвідом використання ви зможете саме тут!
+                <div class="category-description__text">{{$description}}
                 </div>
             </div>
             <div class="category-content__info-stat-bottom">
