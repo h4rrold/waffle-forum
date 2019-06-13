@@ -16,6 +16,7 @@ Route::post('community/categories/getCurrentlyVotedPosts', 'DiscussionController
 
 //api calls
 Route::post('emailExists', 'RegController@emailExists');
+Route::post('nickExists', 'RegController@nickExists');
 //MAIN
 Route::get('registration', 'RegController@out');
 Route::post('reg', 'RegController@registration');

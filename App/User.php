@@ -9,18 +9,17 @@ class User extends Model
 
     public function validNickname($nickname)
     {
-        return MyPDO::run("SELECT * FROM `users` WHERE `nickname` LIKE ?", [$nickname]);
+        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `nickname` = ?", [$nickname]);
     }
 
     public function validEmail($email)
     {
-        return MyPDO::run("SELECT * FROM `users` WHERE `email` LIKE ?", [$email]);
+        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `email` = ?", [$email]);
     }
 
     public  function nickORemail($nick_email)
     {
-        return MyPDO::first("SELECT * FROM `users` WHERE `email` LIKE ? OR `nickname` LIKE ?", [$nick_email, $nick_email]);
-
+        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `email` LIKE ? OR `nickname` LIKE ?", [$nick_email, $nick_email]);
     }
 
     public function last_login($id_user)
