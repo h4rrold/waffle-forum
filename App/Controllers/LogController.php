@@ -22,6 +22,7 @@ class LogController extends Controller
             setcookie('nick_email_log', $nick_email);
 
             $user = $obj->nickORemail($nick_email);
+
             if (!empty($user)) {
                 if (password_verify($pass.$user['salt'], $user['pass'])) {
                     $obj->last_login($user['id']);
