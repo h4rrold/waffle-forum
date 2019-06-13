@@ -9,17 +9,17 @@ class User extends Model
 
     public function validNickname($nickname)
     {
-        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `nickname` = ?", [$nickname]);
+        return MyPDO::run("SELECT * FROM `users` WHERE `nickname` LIKE ?", [$nickname]);
     }
 
     public function validEmail($email)
     {
-        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `email` = ?", [$email]);
+        return MyPDO::run("SELECT * FROM `users` WHERE `email` LIKE ?", [$email]);
     }
 
     public  function nickORemail($nick_email)
     {
-        return MyPDO::first("SELECT IF(COUNT(*)=0,TRUE,FALSE) as result FROM `users` WHERE `email` LIKE ? OR `nickname` LIKE ?", [$nick_email, $nick_email]);
+        return MyPDO::first("SELECT * FROM `users` WHERE `email` LIKE ? OR `nickname` LIKE ?", [$nick_email, $nick_email]);
     }
 
     public function last_login($id_user)
@@ -27,6 +27,6 @@ class User extends Model
         $date = DateTime::createFromFormat('U', time() + 10800, new DateTimeZone('+02:00'));
         $date = date_format($date, 'Y-m-d H:i:s');
         $ip = $_SERVER['REMOTE_ADDR'];
-        MyPDO::runWithoutFetch("UPDATE `users` SET `last_login` = ? WHERE `users`.`id` = ?", [$date,$ip]);
+        MyPDO::runWithoutFetch("UPDATE `users` SET `last_login` = ?, `last_ip` = ? WHERE `users`.`id` = ?", [$date,$ip, $id_user]);
     }
 }
