@@ -52,7 +52,7 @@ $(document).ready(function () {
         let user_id = $(this).parent().data('user_id');
         let post_id = $(this).closest('.discussion__post').data('post_id');
         $.ajax({
-            url: '/waffle-forum/community/categories/increaseRatingByUserVote',
+            url: '/community/categories/increaseRatingByUserVote',
             data: {
                 inc: inc,
                 post_id: post_id

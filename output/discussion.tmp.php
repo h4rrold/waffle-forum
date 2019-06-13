@@ -2,7 +2,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '/waffle-forum/community/categories/getCurrentlyVotedPosts',
+            url: '/community/categories/getCurrentlyVotedPosts',
             dataType: 'JSON',
             method: 'POST',
             success: function(data) {
